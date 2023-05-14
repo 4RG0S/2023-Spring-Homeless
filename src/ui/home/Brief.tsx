@@ -1,6 +1,7 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { FlexContainer } from "../widget/FlexContainer";
+import { Text } from "../widget/Text";
 import { ResponsiveSizeConstant } from "../../GlobalConstant";
 
 const localConstant = {
@@ -23,17 +24,17 @@ export const Brief = (): JSX.Element => {
 
     return (
         <FlexContainer width='100%' flexDirection='column' justifyContent='space-between' {...{margin: '25px 35px'}}>
-            <p style={{fontSize: '3rem', margin: 0, fontWeight: 100}}>ARGOS</p>
+            <Text fontSize='3rem' fontWeight={100} {...{margin: 0}}>ARGOS</Text>
             <FlexContainer width='100%' flexDirection='column' justifyContent='flex-end' alignItems='flex-end'>
-                <p style={{fontSize: titleFontSize, margin: 0, width: '60%', minWidth: titleWidth, fontWeight: 300}}>
+                <Text fontSize={titleFontSize} width='60%' fontWeight={300} {...{margin: 0, minWidth: titleWidth}}>
                     Cyber security club in Chungnam National University
-                </p>
-                <p style={{fontSize: contentFontSize, margin: '50px', width: '40%', minWidth: contentWidth, fontWeight: 300}}>
+                </Text>
+                <Text fontSize={contentFontSize} width='40%' fontWeight={300} {...{margin: '50px', minWidth: contentWidth}}>
                     ARGOS is an information security club that aims to enhance members' 
                     security expertise and knowledge through various activities such as study sessions, 
                     CTF challenges, and research projects. Join us to improve your skills and contribute 
                     to the security community!
-                </p>
+                </Text>
             </FlexContainer>
         </FlexContainer>
     );

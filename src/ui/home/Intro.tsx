@@ -1,7 +1,8 @@
 import React from "react";
 import { FlexContainer } from '../widget/FlexContainer';
 import { FlexItem } from '../widget/FlexItem';
-import { ColorConstant } from '../../GlobalConstant'; 
+import { Text } from "../widget/Text";
+import { ColorConstant } from '../../GlobalConstant';
 import logo from './logo.svg';
 import './Intro.css';
 
@@ -15,12 +16,12 @@ export const Intro = (): JSX.Element => {
         <FlexContainer width='80%' flexDirection='column' justifyContent='center' alignItems='center'>
             <FlexItem {...{display: 'block'}}>
                 <LogoIconSmall />
-                <p style={{color: ColorConstant.WHITE, fontWeight: 'bold'}}>
+                <Text color={ColorConstant.WHITE} fontWeight='bold'>
                     hacktheworld<br />
                     for<br />
                     everyone.<br />
-                </p>
-                <p style={{color: 'grey', fontWeight: 200}}>ARGOS</p>
+                </Text>
+                <Text color='grey' fontWeight={200}>ARGOS</Text>
             </FlexItem>
         </FlexContainer>
         </>
