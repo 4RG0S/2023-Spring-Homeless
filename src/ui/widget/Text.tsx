@@ -22,7 +22,7 @@ export const Text: React.FC<TextProps> = ({
     className = '',
     ...otherAttributes
 }) => {
-    return <div id={id} className={className} style={{
+    return <p id={id} className={className} style={{
         color: color,
         fontSize: fontSize,
         fontWeight: fontWeight,
@@ -31,6 +31,6 @@ export const Text: React.FC<TextProps> = ({
         ...otherAttributes
     }}>
         {children}
-    </div>
+    </p>
 };
 
