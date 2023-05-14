@@ -1,7 +1,7 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { FlexContainer } from "../widget/FlexContainer";
-import { GlobalConstant } from "../../GlobalConstant";
+import { ResponsiveSizeConstant } from "../../GlobalConstant";
 
 const localConstant = {
     TITLE_DESKTOP_FONT_SIZE: '4rem',
@@ -15,7 +15,7 @@ const localConstant = {
 }
 
 export const Brief = (): JSX.Element => {
-    const isSmallScreen = useMediaQuery({ maxWidth: GlobalConstant.SMALL_SCREEN_WIDTH });
+    const isSmallScreen = useMediaQuery({ maxWidth: ResponsiveSizeConstant.SMALL_SCREEN_WIDTH });
     let titleFontSize = isSmallScreen ? localConstant.TITLE_SMALL_FONT_SIZE : localConstant.TITLE_DESKTOP_FONT_SIZE;
     let contentFontSize = isSmallScreen ? localConstant.CONTENT_SMALL_FONT_SIZE : localConstant.CONTENT_DESKTOP_FONT_SIZE;
     let titleWidth = isSmallScreen ? localConstant.TITLE_SMALL_MIN_WIDTH : localConstant.TITLE_DESKTOP_MIN_WIDTH;
