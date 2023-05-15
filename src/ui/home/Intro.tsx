@@ -1,7 +1,7 @@
 import React from "react";
 import { FlexContainer } from '../widget/FlexContainer';
 import { FlexItem } from '../widget/FlexItem';
-import { Text } from "../widget/Text";
+import { Text } from "../widget/TextWidgets";
 import { ColorConstant } from '../../GlobalConstant';
 import logo from './logo.svg';
 import './Intro.css';

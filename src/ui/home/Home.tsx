@@ -17,7 +17,7 @@ const homeConstant = {
 }
 
 export const Home = (): JSX.Element => {
-    const isSmallScreen = useMediaQuery({ maxWidth: ResponsiveSizeConstant.SMALL_SCREEN_WIDTH });
+    const isSmallScreen = useMediaQuery({ maxWidth: ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH });
     let mainSectionWidth = isSmallScreen ? homeConstant.SCREEN_WIDTH_PERCENT : homeConstant.MAIN_SECTION_WIDTH;
     let sideBarDisplay = isSmallScreen ? 'none' : 'flex';
 
@@ -27,13 +27,9 @@ export const Home = (): JSX.Element => {
         display: sideBarDisplay
     };
 
-    const homeAttributes = {
-        minWidth: homeConstant.SCREEN_MIN_WIDTH
-    };
-
     return (
         <>
-        <FlexContainer width='100vw' height={homeConstant.SCREEN_HEIGHT} {...homeAttributes}>
+        <FlexContainer width='100vw' height={homeConstant.SCREEN_HEIGHT}>
             <FlexContainer height='100%' flexDirection='column' {...sideBarAttributes}>
                 <FlexItem width='100%' flexBasis='0' flexGrow={25} {...{background: ColorConstant.BLACK}}>
                     <Intro />
@@ -49,7 +45,7 @@ export const Home = (): JSX.Element => {
                 </FlexItem>
             </FlexContainer>
         </FlexContainer>
-        <FlexContainer width='100vw' height={homeConstant.SCREEN_HEIGHT} {...homeAttributes}>
+        <FlexContainer width='100vw' height={homeConstant.SCREEN_HEIGHT}>
             <FlexContainer width='100%' flexDirection='column' height={homeConstant.SCREEN_HEIGHT}>
                 <FlexItem width='100%' flexBasis='0' flexGrow={100} {...{background: ColorConstant.BLACK}}>
                     {/* Our best contribution ... */}
