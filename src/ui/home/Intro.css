@@ -1,0 +1,19 @@
+.flip-item {
+    animation-name: flip-item;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flip-item {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    20% {
+        transform: rotateY(360deg);
+    }
+
+    40% {
+        transform: rotateY(0deg);
+    }
+}
