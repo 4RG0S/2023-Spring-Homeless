@@ -16,7 +16,7 @@ type TextProps = {
 type ResponsiveTextProps = {
     children?: React.ReactNode,
     color?: string,
-    fontSize?: 'Large' | 'Medium' | 'Small',
+    fontSize?: 'Large' | 'Medium' | 'Small' | string,
     fontWeight?: string | number,
     width?: string | Array<string>,  // <length>
     height?: string  // <length>
@@ -50,7 +50,7 @@ export const Text: React.FC<TextProps> = ({
 export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
     children = null,
     color = undefined,
-    fontSize = 'desktop',
+    fontSize = 'Large',
     fontWeight = undefined,
     width = 'auto',
     height = 'auto',
@@ -63,23 +63,17 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
         maxWidth: ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH
     });
     const isMobileScreen = useMediaQuery({ maxWidth: ResponsiveSizeConstant.MOBILE_SCREEN_MAX_WIDTH });
-
+    
     let selectedFontSize: string;
     let selectedWidth: string;
 
-    if (isMobileScreen) {
-        selectedFontSize = ResponsiveFontSizeConstant[
-            fontSize as keyof typeof ResponsiveFontSizeConstant]?.MOBILE_SCREEN_FONT_SIZE;
-        selectedWidth = typeof width === 'object' ? width[0] : width;
-    } else if (isTabletScreen) {
-        selectedFontSize = ResponsiveFontSizeConstant[
-            fontSize as keyof typeof ResponsiveFontSizeConstant]?.TABLET_SCREEN_FONT_SIZE;
-        selectedWidth = typeof width === 'object' ? width[1] : width;
-    } else {  // Desktop Screen
-        selectedFontSize = ResponsiveFontSizeConstant[
-            fontSize as keyof typeof ResponsiveFontSizeConstant]?.DESKTOP_SCREEN_FONT_SIZE;
-        selectedWidth = typeof width === 'object' ? width[2] : width;
-    }
+    if (fontSize === 'Large') selectedFontSize = ResponsiveFontSizeConstant.LARGE
+    else if (fontSize === 'Medium') selectedFontSize = ResponsiveFontSizeConstant.MEDIUM
+    else selectedFontSize = ResponsiveFontSizeConstant.SMALL
+
+    if (isMobileScreen) selectedWidth = typeof width === 'object' ? width[0] : width;
+    else if (isTabletScreen) selectedWidth = typeof width === 'object' ? width[1] : width;
+    else selectedWidth = typeof width === 'object' ? width[2] : width;  // Desktop Screen
 
     return <p id={id} className={className} style={{
         color: color,

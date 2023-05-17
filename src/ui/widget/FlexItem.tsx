@@ -18,8 +18,8 @@ export const FlexItem: React.FC<FlexItemProps> = ({
     flexShrink = 1,
     width = 'auto',
     height = 'auto',
-    id = '',
-    className = '',
+    id = undefined,
+    className = undefined,
     ...otherAttributes
 }) => {
     return <div id={id} className={className} style={{

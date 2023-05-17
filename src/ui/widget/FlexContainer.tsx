@@ -14,16 +14,16 @@ type FlexContainerProps = {
 }
 
 export const FlexContainer: React.FC<FlexContainerProps> = ({
-    children = null,
+    children = undefined,
     flexDirection = 'row',
-    flexWrap = 'nowrap',
+    flexWrap = undefined,
     justifyContent = 'flex-start',
-    alignItems = 'flex-start',
-    alignContent = 'flex-start',
+    alignItems = undefined,
+    alignContent = undefined,
     width = 'auto',
     height = 'auto',
-    id = '',
-    className = '',
+    id = undefined,
+    className = undefined,
     ...otherAttributes
 }) => {
     return <div id={id} className={className} style={{

@@ -6,21 +6,9 @@ export const ColorConstant = {
 };
 
 export const ResponsiveFontSizeConstant = {
-    Large: {
-        MOBILE_SCREEN_FONT_SIZE: '3rem',
-        TABLET_SCREEN_FONT_SIZE: '3.7rem',
-        DESKTOP_SCREEN_FONT_SIZE: '4rem'
-    },
-    Medium: {
-        MOBILE_SCREEN_FONT_SIZE: '2rem',
-        TABLET_SCREEN_FONT_SIZE: '2.3rem',
-        DESKTOP_SCREEN_FONT_SIZE: '2.5rem'
-    },
-    Small: {
-        MOBILE_SCREEN_FONT_SIZE: '1rem',
-        TABLET_SCREEN_FONT_SIZE: '1.3rem',
-        DESKTOP_SCREEN_FONT_SIZE: '1.5rem'
-    }
+    LARGE: '4rem',
+    MEDIUM: '2.5rem',
+    SMALL: '1.5rem'
 };
 
 export const ResponsiveSizeConstant = {
