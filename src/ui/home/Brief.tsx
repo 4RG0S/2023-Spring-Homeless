@@ -1,19 +1,6 @@
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 import { FlexContainer } from "../widget/FlexContainer";
 import { ResponsiveText, Text } from "../widget/TextWidgets";
-import { ResponsiveSizeConstant } from "../../GlobalConstant";
-
-const localConstant = {
-    TITLE_DESKTOP_FONT_SIZE: '4rem',
-    TITLE_SMALL_FONT_SIZE: '3.7rem',
-    TITLE_DESKTOP_MIN_WIDTH: '400px',
-    TITLE_SMALL_MIN_WIDTH: '350px',
-    CONTENT_DESKTOP_FONT_SIZE: '1.5rem',
-    CONTENT_SMALL_FONT_SIZE: '1.3rem',
-    CONTENT_DESKTOP_MIN_WIDTH: '350px',
-    CONTENT_SMALL_MIN_WIDTH: '300px'
-}
 
 export const Brief = (): JSX.Element => {
     return (

@@ -7,7 +7,7 @@ import logo from './logo.svg';
 import './Intro.css';
 
 const LogoIconSmall = () => (
-    <img src={logo} className='flip-item' width='15rem' alt="Logo Icon" />
+    <img src={logo} className='flip-item' width='15rem' alt='Logo Icon' style={{marginTop: '20px'}} />
 );
 
 export const Intro = (): JSX.Element => {

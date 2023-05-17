@@ -12,7 +12,7 @@ type FlexItemProps = {
 }
 
 export const FlexItem: React.FC<FlexItemProps> = ({
-    children = null,
+    children = undefined,
     flexBasis = 'auto',
     flexGrow = 0,
     flexShrink = 1,
@@ -23,7 +23,6 @@ export const FlexItem: React.FC<FlexItemProps> = ({
     ...otherAttributes
 }) => {
     return <div id={id} className={className} style={{
-        display: 'flex',
         flexBasis: flexBasis,
         flexGrow: flexGrow,
         flexShrink: flexShrink,
