@@ -67,9 +67,10 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
     let selectedFontSize: string;
     let selectedWidth: string;
 
-    if (fontSize === 'Large') selectedFontSize = ResponsiveFontSizeConstant.LARGE
-    else if (fontSize === 'Medium') selectedFontSize = ResponsiveFontSizeConstant.MEDIUM
-    else selectedFontSize = ResponsiveFontSizeConstant.SMALL
+    if (fontSize === 'Large') selectedFontSize = ResponsiveFontSizeConstant.LARGE;
+    else if (fontSize === 'Medium') selectedFontSize = ResponsiveFontSizeConstant.MEDIUM;
+    else if (fontSize === 'Small') selectedFontSize = ResponsiveFontSizeConstant.SMALL;
+    else selectedFontSize = fontSize;
 
     if (isMobileScreen) selectedWidth = typeof width === 'object' ? width[0] : width;
     else if (isTabletScreen) selectedWidth = typeof width === 'object' ? width[1] : width;
@@ -81,6 +82,7 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
         fontWeight: fontWeight,
         width: selectedWidth,
         height: height,
+        wordWrap: 'break-word',
         ...otherAttributes
     }}>
         {children}

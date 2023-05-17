@@ -42,7 +42,7 @@ export const Home = (): JSX.Element => {
             </FlexContainer>
             <FlexContainer width={mainSectionWidth} flexDirection='column' {...{minHeight: '100vh'}}>
                 <FlexItem width='100%' flexBasis='0' flexGrow={7} {...{minHeight: '60px', background: ColorConstant.BLACK}}></FlexItem>
-                <FlexItem width='100%' flexBasis='0' flexGrow={93} {...{background: ColorConstant.WHITE, display: 'flex'}}>
+                <FlexItem width='100%' flexBasis='0' flexGrow={93} {...{background: ColorConstant.WHITE, display: 'flex', justifyContent: 'center'}}>
                     <Brief />
                 </FlexItem>
             </FlexContainer>
