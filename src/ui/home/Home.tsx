@@ -6,6 +6,7 @@ import { ColorConstant, ResponsiveSizeConstant } from '../../GlobalConstant';
 import { Intro } from './Intro';
 import { Brief } from './Brief';
 import { Scaffold } from '../widget/Scaffold';
+import { DivideContainer } from '../widget/Divider';
 
 const homeConstant = {
     SCREEN_HEIGHT: '100vh',
@@ -25,7 +26,6 @@ export const Home = (): JSX.Element => {
     const sideBarAttributes = {
         width: homeConstant.SIDEBAR_WIDTH,
         minWidth: homeConstant.SIDEBAR_MIN_WIDTH,
-        minHeight: homeConstant.SCREEN_HEIGHT,
         display: sideBarDisplay
     };
 
@@ -54,6 +54,26 @@ export const Home = (): JSX.Element => {
                 </FlexItem>
             </FlexContainer>
         </FlexContainer>
+        <DivideContainer direction='row'>
+            <DivideContainer direction='column' ratio={20} disappearable={true} 
+                             maxConditionWidth={ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH}
+                             {...{minHeight: '100vh', minWidth: 200}}>
+                <DivideContainer ratio={25} disappearable={true}
+                                 maxConditionHeight={600}
+                                 {...{background: ColorConstant.BLACK}}>
+                    <Intro />
+                </DivideContainer>
+                <DivideContainer ratio={75} {...{background: ColorConstant.LIGHT_GREY}}>
+                    
+                </DivideContainer>
+            </DivideContainer>
+            <DivideContainer direction='column' ratio={80} {...{background: ColorConstant.WHITE, minHeight: '100vh'}}>
+                <DivideContainer ratio={7} {...{background: ColorConstant.BLACK}}></DivideContainer>
+                <DivideContainer ratio={93} {...{background: ColorConstant.WHITE}}>
+                    <Brief />
+                </DivideContainer>
+            </DivideContainer>
+        </DivideContainer>
         </Scaffold>
     )
 }
