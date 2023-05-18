@@ -1,6 +1,6 @@
 import React from "react";
-import { FlexContainer } from "../widget/FlexContainer";
-import { ResponsiveText, Text } from "../widget/TextWidgets";
+import { FlexContainer } from "../../widget/FlexContainer";
+import { ResponsiveText, Text } from "../../widget/TextWidgets";
 
 export const Brief = (): JSX.Element => {
     return (
