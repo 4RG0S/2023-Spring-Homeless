@@ -23,7 +23,8 @@ export const Brief = (): JSX.Element => {
     let contentWidth = isSmallScreen ? localConstant.CONTENT_SMALL_MIN_WIDTH : localConstant.CONTENT_DESKTOP_MIN_WIDTH;
 
     return (
-        <FlexContainer width='100%' flexDirection='column' justifyContent='space-between' {...{margin: '25px 35px'}}>
+        <FlexContainer width='100%' flexDirection='column' justifyContent='space-between' 
+                       {...{margin: '25px 35px', zIndex: 2, pointerEvents: 'none'}}>
             <Text fontSize='3rem' fontWeight={100} {...{margin: 0}}>ARGOS</Text>
             <FlexContainer width='100%' flexDirection='column' justifyContent='flex-end' alignItems='flex-end'>
                 <Text fontSize={titleFontSize} width='60%' fontWeight={300} {...{margin: 0, minWidth: titleWidth}}>

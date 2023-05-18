@@ -5,6 +5,7 @@ import { FlexItem } from '../widget/FlexItem';
 import { ColorConstant, ResponsiveSizeConstant } from '../../GlobalConstant'; 
 import { Intro } from './Intro';
 import { Brief } from './Brief';
+import { Effect } from './effect/Effect';
 
 const homeConstant = {
     SCREEN_HEIGHT: '100vh',
@@ -44,8 +45,9 @@ export const Home = (): JSX.Element => {
             </FlexContainer>
             <FlexContainer width={mainSectionWidth} height={homeConstant.SCREEN_HEIGHT} flexDirection='column'>
                 <FlexItem width='100%' flexBasis='0' flexGrow={7} {...{minHeight: '60px', background: ColorConstant.BLACK}}></FlexItem>
-                <FlexItem width='100%' flexBasis='0' flexGrow={93} {...{background: ColorConstant.WHITE}}>
+                <FlexItem width='100%' flexBasis='0' flexGrow={93} {...{background: ColorConstant.WHITE, position: 'relative'}}>
                     <Brief />
+                    <Effect />
                 </FlexItem>
             </FlexContainer>
         </FlexContainer>
@@ -56,6 +58,9 @@ export const Home = (): JSX.Element => {
                 </FlexItem>
             </FlexContainer>
         </FlexContainer>
+        <div style={{width: '100vw', height: '100vh', background: 'black'}}>
+            <Effect />
+        </div>
         </>
     )
 }
