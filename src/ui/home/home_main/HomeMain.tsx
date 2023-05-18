@@ -1,8 +1,8 @@
 import React from "react";
-import { DivideContainer } from "../../widget/Divider";
-import { Intro } from "./Intro";
+import DivideContainer from "../../widget/Divider";
+import Intro from "./Intro";
 import { ColorConstant, ResponsiveSizeConstant } from "../../../GlobalConstant";
-import { Brief } from "./Brief";
+import Brief from "./Brief";
 
 type HomeMainProps = {
     screen_height: String

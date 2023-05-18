@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scaffold } from '../widget/Scaffold';
+import Scaffold from '../widget/Scaffold';
 import HomeMain from './home_main/HomeMain';
 import HomeNotice from './home_notice/HomeNotice';
 import NewRecruits from './new_recruits/NewRecruits';

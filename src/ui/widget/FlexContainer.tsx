@@ -13,7 +13,7 @@ type FlexContainerProps = {
     className?: string
 }
 
-export const FlexContainer: React.FC<FlexContainerProps> = ({
+const FlexContainer: React.FC<FlexContainerProps> = ({
     children = undefined,
     flexDirection = 'row',
     flexWrap = undefined,
@@ -40,3 +40,5 @@ export const FlexContainer: React.FC<FlexContainerProps> = ({
         {children}
     </div>
 };
+
+export default FlexContainer;

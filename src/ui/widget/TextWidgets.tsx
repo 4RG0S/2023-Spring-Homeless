@@ -63,7 +63,7 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
         maxWidth: ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH
     });
     const isMobileScreen = useMediaQuery({ maxWidth: ResponsiveSizeConstant.MOBILE_SCREEN_MAX_WIDTH });
-    
+
     let selectedFontSize: string;
     let selectedWidth: string;
 

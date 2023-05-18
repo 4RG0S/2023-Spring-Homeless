@@ -14,7 +14,7 @@ type DivideContainerProps = {
     height?: string
 }
 
-export const DivideContainer: React.FC<DivideContainerProps> = ({
+const DivideContainer: React.FC<DivideContainerProps> = ({
     children = undefined,
     ratio = 1,
     direction = 'row',
@@ -54,3 +54,5 @@ export const DivideContainer: React.FC<DivideContainerProps> = ({
         </div>
     );
 };
+
+export default DivideContainer;

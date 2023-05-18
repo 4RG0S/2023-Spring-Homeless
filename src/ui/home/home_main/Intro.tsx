@@ -1,6 +1,6 @@
 import React from "react";
-import { FlexContainer } from '../../widget/FlexContainer';
-import { FlexItem } from '../../widget/FlexItem';
+import FlexContainer from '../../widget/FlexContainer';
+import FlexItem from '../../widget/FlexItem';
 import { Text } from "../../widget/TextWidgets";
 import { ColorConstant } from '../../../GlobalConstant';
 import logo from '../../../assets/svg/logo.svg';
@@ -10,7 +10,7 @@ const LogoIconSmall = () => (
     <img src={logo} className='flip-item' width='15rem' alt='Logo Icon' style={{ marginTop: '20px' }} />
 );
 
-export const Intro = (): JSX.Element => {
+const Intro = (): JSX.Element => {
     return (
         <FlexContainer width='80%' flexDirection='column' justifyContent='center' alignItems='center'>
             <FlexItem {...{ display: 'block' }}>
@@ -25,3 +25,5 @@ export const Intro = (): JSX.Element => {
         </FlexContainer>
     );
 }
+
+export default Intro;

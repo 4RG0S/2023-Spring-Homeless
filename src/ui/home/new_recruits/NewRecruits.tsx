@@ -1,5 +1,5 @@
 import React from "react";
-import { DivideContainer } from "../../widget/Divider";
+import DivideContainer from "../../widget/Divider";
 
 type NewRecruitsProps = {
     screen_height: String

@@ -14,7 +14,7 @@ const scaffoldConstant = {
     SCREEN_MIN_WIDTH: '280px'
 }
 
-export const Scaffold: React.FC<ScaffoldProps> = ({
+const Scaffold: React.FC<ScaffoldProps> = ({
     children = undefined,
     height = undefined,
     width = scaffoldConstant.SCREEN_WIDTH,
@@ -24,9 +24,9 @@ export const Scaffold: React.FC<ScaffoldProps> = ({
 }) => {
     return (
         <div style={{
-            height: height, 
-            width: width, 
-            minHeight: minHeight, 
+            height: height,
+            width: width,
+            minHeight: minHeight,
             minWidth: minWidth,
             ...otherAttributes
         }}>
@@ -34,3 +34,5 @@ export const Scaffold: React.FC<ScaffoldProps> = ({
         </div>
     )
 }
+
+export default Scaffold;
