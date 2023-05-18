@@ -12,18 +12,17 @@ type FlexItemProps = {
 }
 
 export const FlexItem: React.FC<FlexItemProps> = ({
-    children = null,
+    children = undefined,
     flexBasis = 'auto',
     flexGrow = 0,
     flexShrink = 1,
     width = 'auto',
     height = 'auto',
-    id = '',
-    className = '',
+    id = undefined,
+    className = undefined,
     ...otherAttributes
 }) => {
     return <div id={id} className={className} style={{
-        display: 'flex',
         flexBasis: flexBasis,
         flexGrow: flexGrow,
         flexShrink: flexShrink,

@@ -5,6 +5,14 @@ export const ColorConstant = {
     WHITE: '#F5F5F5'
 };
 
+export const ResponsiveFontSizeConstant = {
+    LARGE: '4rem',
+    MEDIUM: '2.5rem',
+    SMALL: '1.5rem'
+};
+
 export const ResponsiveSizeConstant = {
-    SMALL_SCREEN_WIDTH: 768
+    MOBILE_SCREEN_MAX_WIDTH: 479,
+    TABLET_SCREEN_MAX_WIDTH: 768,
+    TABLET_SCREEN_MIN_WIDTH: 480
 };

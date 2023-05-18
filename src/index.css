@@ -15,15 +15,21 @@ body {
     font-size: 1rem;
 }
 
-@media (max-width: 768px) {
-    body {
-        font-size: 0.8rem;
+@media (min-width: 769px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media ((max-width: 768px) and (min-width: 480px)) {
+    html {
+        font-size: 14px;
     }
 }
 
 @media (max-width: 576px) {
-    body {
-        font-size: 0.7rem;
+    html {
+        font-size: 12px;
     }
 }
 
