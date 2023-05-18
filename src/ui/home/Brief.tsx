@@ -15,7 +15,7 @@ const localConstant = {
     CONTENT_SMALL_MIN_WIDTH: '300px',
 }
 
-export const Brief = (): JSX.Element => {
+export const Brief = ({...addtionalAttributes}): JSX.Element => {
     const isSmallScreen = useMediaQuery({ maxWidth: ResponsiveSizeConstant.SMALL_SCREEN_WIDTH });
     let titleFontSize = isSmallScreen ? localConstant.TITLE_SMALL_FONT_SIZE : localConstant.TITLE_DESKTOP_FONT_SIZE;
     let contentFontSize = isSmallScreen ? localConstant.CONTENT_SMALL_FONT_SIZE : localConstant.CONTENT_DESKTOP_FONT_SIZE;
@@ -24,7 +24,7 @@ export const Brief = (): JSX.Element => {
 
     return (
         <FlexContainer width='100%' flexDirection='column' justifyContent='space-between' 
-                       {...{margin: '25px 35px', zIndex: 2, pointerEvents: 'none'}}>
+                       {...{margin: '25px 35px', ...addtionalAttributes}}>
             <Text fontSize='3rem' fontWeight={100} {...{margin: 0}}>ARGOS</Text>
             <FlexContainer width='100%' flexDirection='column' justifyContent='flex-end' alignItems='flex-end'>
                 <Text fontSize={titleFontSize} width='60%' fontWeight={300} {...{margin: 0, minWidth: titleWidth}}>

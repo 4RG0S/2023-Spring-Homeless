@@ -45,9 +45,9 @@ export const Home = (): JSX.Element => {
             </FlexContainer>
             <FlexContainer width={mainSectionWidth} height={homeConstant.SCREEN_HEIGHT} flexDirection='column'>
                 <FlexItem width='100%' flexBasis='0' flexGrow={7} {...{minHeight: '60px', background: ColorConstant.BLACK}}></FlexItem>
-                <FlexItem width='100%' flexBasis='0' flexGrow={93} {...{background: ColorConstant.WHITE, position: 'relative'}}>
-                    <Brief />
-                    <Effect />
+                <FlexItem width='100%' flexBasis='0' flexGrow={93} {...{background: ColorConstant.WHITE}}>
+                    <Brief {...{zIndex: 2, pointerEvents: 'none'}} />
+                    <Effect {...{position: 'absolute', zIndex: 1}} />
                 </FlexItem>
             </FlexContainer>
         </FlexContainer>
@@ -58,9 +58,6 @@ export const Home = (): JSX.Element => {
                 </FlexItem>
             </FlexContainer>
         </FlexContainer>
-        <div style={{width: '100vw', height: '100vh', background: 'black'}}>
-            <Effect />
-        </div>
         </>
     )
 }

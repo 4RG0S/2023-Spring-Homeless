@@ -1,6 +1,6 @@
 import { BallGroup } from "./BallGroup";
 
-export class EffectController {
+export class BallEffectController {
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D;
     private stageWidth: number;
@@ -40,9 +40,7 @@ export class EffectController {
 
     animate() {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
-        
         this.ballGroup.draw(this.ctx);
-
         requestAnimationFrame(this.animate.bind(this));
     }
 
