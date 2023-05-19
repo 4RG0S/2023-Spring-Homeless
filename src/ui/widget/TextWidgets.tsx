@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { ResponsiveSizeConstant, ResponsiveFontSizeConstant } from "../../GlobalConstant";
 
 type TextProps = {
-    children?: React.ReactNode,
+    children: React.ReactNode,
     color?: string,
     fontSize?: string | number,
     fontWeight?: string | number,
@@ -14,7 +14,7 @@ type TextProps = {
 };
 
 type ResponsiveTextProps = {
-    children?: React.ReactNode,
+    children: React.ReactNode,
     color?: string,
     fontSize?: 'Large' | 'Medium' | 'Small' | string,
     fontWeight?: string | number,
@@ -63,7 +63,7 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
         maxWidth: ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH
     });
     const isMobileScreen = useMediaQuery({ maxWidth: ResponsiveSizeConstant.MOBILE_SCREEN_MAX_WIDTH });
-    
+
     let selectedFontSize: string;
     let selectedWidth: string;
 

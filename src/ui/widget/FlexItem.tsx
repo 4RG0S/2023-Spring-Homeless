@@ -11,7 +11,7 @@ type FlexItemProps = {
     className?: string
 }
 
-export const FlexItem: React.FC<FlexItemProps> = ({
+const FlexItem: React.FC<FlexItemProps> = ({
     children = undefined,
     flexBasis = 'auto',
     flexGrow = 0,
@@ -33,3 +33,5 @@ export const FlexItem: React.FC<FlexItemProps> = ({
         {children}
     </div>
 };
+
+export default FlexItem;

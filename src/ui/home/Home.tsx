@@ -1,11 +1,8 @@
 import React from 'react';
-import { FlexContainer } from '../widget/FlexContainer';
-import { FlexItem } from '../widget/FlexItem';
-import { ColorConstant, ResponsiveSizeConstant } from '../../GlobalConstant'; 
-import { Intro } from './Intro';
-import { Brief } from './Brief';
-import { Scaffold } from '../widget/Scaffold';
-import { DivideContainer } from '../widget/Divider';
+import Scaffold from '../widget/Scaffold';
+import HomeMain from './home_main/HomeMain';
+import HomeNotice from './home_notice/HomeNotice';
+import NewRecruits from './new_recruits/NewRecruits';
 
 const homeConstant = {
     SCREEN_HEIGHT: '100vh',
@@ -17,31 +14,17 @@ const homeConstant = {
 export const Home = (): JSX.Element => {
     return (
         <Scaffold>
-        <DivideContainer direction='row' {...{minHeight: homeConstant.SCREEN_HEIGHT}}>
-            <DivideContainer direction='column' ratio={20} disappearable={true} 
-                             maxConditionWidth={ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH}
-                             {...{minWidth: homeConstant.SIDEBAR_MIN_WIDTH}}>
-                <DivideContainer ratio={25} {...{background: ColorConstant.BLACK}}>
-                    <Intro />
-                </DivideContainer>
-                <DivideContainer ratio={75} {...{background: ColorConstant.LIGHT_GREY}}>
-                    {/* Menu Bar */}
-                </DivideContainer>
-            </DivideContainer>
-            <DivideContainer direction='column' ratio={80}>
-                <DivideContainer ratio={7} {...{background: ColorConstant.BLACK, 
-                    minHeight: homeConstant.TOPBAR_MIN_HEIGHT}}>
-                </DivideContainer>
-                <DivideContainer ratio={93} {...{background: ColorConstant.WHITE}}>
-                    <Brief />
-                </DivideContainer>
-            </DivideContainer>
-        </DivideContainer>
-        <FlexContainer width='100%' {...{minHeight: homeConstant.SCREEN_HEIGHT}}>
-            <FlexItem width='100%' flexBasis='0' flexGrow={100} {...{background: ColorConstant.BLACK}}>
-                
-            </FlexItem>
-        </FlexContainer>
+            <HomeMain
+                screen_height={homeConstant.SCREEN_HEIGHT}
+                sidebar_min_width={homeConstant.SIDEBAR_MIN_WIDTH}
+                topbar_min_height={homeConstant.TOPBAR_MIN_HEIGHT}
+            />
+            <HomeNotice
+                screen_height={homeConstant.SCREEN_HEIGHT}
+            />
+            <NewRecruits
+                screen_height={homeConstant.SCREEN_HEIGHT}
+            />
         </Scaffold>
     )
 }
