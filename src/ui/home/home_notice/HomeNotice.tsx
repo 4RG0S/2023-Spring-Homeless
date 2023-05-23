@@ -8,6 +8,8 @@ import { ResponsiveText } from "../../widget/TextWidgets";
 const DUMMY_NOTICE = {
   imageUrl: require("../../../assets/images/noticeImage.png"),
   url: "/",
+  title: "2023 2nd ARGOS Seminar",
+  content: "ARGOS, the security club at our university, recently held a seminar on cybersecurity. We discussed various topics related to security, including password management, phishing attacks, and malware prevention."
 };
 
 type HomeNoticeProps = {
@@ -49,6 +51,19 @@ const HomeNotice = ({ screen_height }: HomeNoticeProps) => {
           </Link>
         </FlexContainer>
       </FlexContainer>
+      <ResponsiveText fontSize="Large" color="white" fontWeight="500" {...{margin: "1% 3%"}}>{DUMMY_NOTICE.title}</ResponsiveText>
+      {DUMMY_NOTICE.content.split(". ").map((sentence, index) => (
+        <ResponsiveText
+          fontSize="Small"
+          color="white"
+          key={index}
+          {...{ margin: "0 3%" }}
+        >
+          {sentence}
+          {index !== DUMMY_NOTICE.content.split(". ").length - 1 && "."}
+          <br />
+        </ResponsiveText>
+      ))}
     </DivideContainer>
   );
 };
