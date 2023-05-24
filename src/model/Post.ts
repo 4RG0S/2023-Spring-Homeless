@@ -1,4 +1,4 @@
-import { FileResponseObject } from "./FileForm";
+import { FileResponse } from "./FileForm";
 import User from "./User";
 import { Board } from "./base/Board";
 import DateBase from "./base/DateBase";
@@ -12,7 +12,7 @@ export default class Post extends DateBase {
     private _user: User;
     private _tags: Array<string>;
     private _comments?: Array<Comment>;
-    private _fileResponseObjects?: Array<FileResponseObject>;
+    private _fileResponseObjects?: Array<FileResponse>;
     
     constructor(
         id: number,
@@ -25,7 +25,7 @@ export default class Post extends DateBase {
         createdAt: Date,
         updatedAt?: Date,
         comments?: Array<Comment>,  // Can be initialized when user read post's detail.
-        fileResponseObjects?: Array<FileResponseObject>
+        fileResponseObjects?: Array<FileResponse>
     ) {
         super(createdAt, updatedAt);
         this._id = id;
@@ -72,7 +72,7 @@ export default class Post extends DateBase {
         return this._comments;
     }
 
-    get fileResponseObjects(): Array<FileResponseObject> | undefined {
+    get fileResponseObjects(): Array<FileResponse> | undefined {
         return this._fileResponseObjects;
     }
 
@@ -109,7 +109,7 @@ export default class Post extends DateBase {
         this._comments = comments;
     }
 
-    set fileResponseObjects(fileResponseObjects: Array<FileResponseObject> | undefined) {
+    set fileResponseObjects(fileResponseObjects: Array<FileResponse> | undefined) {
         this._fileResponseObjects = fileResponseObjects;
     }
 }

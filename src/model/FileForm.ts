@@ -1,18 +1,15 @@
-export type FileResponseObject = {
+import { FileRequest } from "./request/Request";
+
+export type FileResponse = {
     name: string;
     id: string;
     downloadURL: string;
 }
 
-export type FileRequestObject = {
-    name: string;
-    file: File;
-};
-
 export default class FileForm {
-    private _files: Array<FileRequestObject>;
+    private _files: Array<FileRequest>;
 
-    constructor(files: Array<FileRequestObject>) {
+    constructor(files: Array<FileRequest>) {
         this._files = files;
     }
 
