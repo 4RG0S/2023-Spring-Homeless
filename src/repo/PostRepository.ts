@@ -1,9 +1,9 @@
-import FileForm from "../model/FileForm";
+import FileForm, { FileRequestObject } from "../model/FileForm";
 import Post from "../model/Post";
 import { Board } from "../model/base/Board";
 
 export default interface PostRepository {
-    createPost(post: Post): number;
+    createPost(post: Post, fileForm: FileForm): number;
     getPost(postedBoard: Board, postId: number): Post | null;
     getAllPosts(postedBoard: Board, page: number, offset: number): Array<Post>;
     updatePost(updatedPost: Post): boolean;

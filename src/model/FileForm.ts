@@ -1,12 +1,18 @@
-export type FileObject = {
+export type FileResponseObject = {
+    name: string;
+    id: string;
+    downloadURL: string;
+}
+
+export type FileRequestObject = {
     name: string;
     file: File;
 };
 
 export default class FileForm {
-    private _files: Array<FileObject>;
+    private _files: Array<FileRequestObject>;
 
-    constructor(files: Array<FileObject>) {
+    constructor(files: Array<FileRequestObject>) {
         this._files = files;
     }
 
