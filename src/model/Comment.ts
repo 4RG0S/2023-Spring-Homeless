@@ -48,23 +48,23 @@ export default class Comment extends DateBase {
     }
 
     // Setter
-    set id(value: number) {
-        this._id = value;
+    set id(id: number) {
+        this._id = id;
     }
 
-    set commentedPostBoard(value: Board) {
-        this._commentedPostBoard = value;
+    set commentedPostBoard(commentedPostBoard: Board) {
+        this._commentedPostBoard = commentedPostBoard;
     }
 
-    set content(value: string) {
-        this._content = value;
+    set content(content: string) {
+        this._content = content;
     }
 
-    set like(value: number) {
-        this._like = value;
+    set like(like: number) {
+        this._like = like;
     }
 
-    set user(value: User) {
-        this._user = value;
+    set user(user: User) {
+        this._user = user;
     }
 }

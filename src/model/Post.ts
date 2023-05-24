@@ -1,3 +1,4 @@
+import FileForm from "./FileForm";
 import User from "./User";
 import { Board } from "./base/Board";
 import DateBase from "./base/DateBase";
@@ -11,6 +12,7 @@ export default class Post extends DateBase {
     private _user: User;
     private _tags: Array<string>;
     private _comments?: Array<Comment>;
+    private _fileForm?: FileForm;
     
     constructor(
         id: number,
@@ -22,7 +24,8 @@ export default class Post extends DateBase {
         tags: Array<string>,
         createdAt: Date,
         updatedAt?: Date,
-        comments?: Array<Comment>  // Can be initialized when user read post's detail.
+        comments?: Array<Comment>,  // Can be initialized when user read post's detail.
+        fileForm?: FileForm
     ) {
         super(createdAt, updatedAt);
         this._id = id;
@@ -33,6 +36,7 @@ export default class Post extends DateBase {
         this._user = user;
         this._tags = tags;
         this._comments = comments;
+        this._fileForm = fileForm;
     }
 
     // Getter
@@ -68,6 +72,10 @@ export default class Post extends DateBase {
         return this._comments;
     }
 
+    get fileForm(): FileForm | undefined {
+        return this._fileForm;
+    }
+
     // Setter
     set id(id: number) {
         this._id = id;
@@ -99,5 +107,9 @@ export default class Post extends DateBase {
 
     set comments(comments: Array<Comment> | undefined) {
         this._comments = comments;
+    }
+
+    set fileForm(fileForm: FileForm | undefined) {
+        this._fileForm = fileForm;
     }
 }

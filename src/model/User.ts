@@ -46,23 +46,23 @@ export default class User extends DateBase {
     }
 
     // Setter
-    set id(value: string) {
-        this._id = value;
+    set id(id: string) {
+        this._id = id;
     }
 
-    set name(value: string) {
-        this._name = value;
+    set name(name: string) {
+        this._name = name;
     }
 
-    set birth(value: Date) {
-        this._birth = value;
+    set birth(birth: Date) {
+        this._birth = birth;
     }
 
-    set imageURL(value: string) {
-        this._imageURL = value;
+    set imageURL(imageURL: string) {
+        this._imageURL = imageURL;
     }
 
-    set lastLoginAt(value: Date | undefined) {
-        this._lastLoginAt = value;
+    set lastLoginAt(lastLoginAt: Date | undefined) {
+        this._lastLoginAt = lastLoginAt;
     }
 }
