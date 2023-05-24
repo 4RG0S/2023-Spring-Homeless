@@ -9,5 +9,5 @@ export default interface PostRepository {
     // updatePost(postedBoard: Board, postId: number, updatedPost: PostRequest): boolean;
     updatePost(updatedPost: Post): boolean;
     deletePost(postedBoard: Board, postId: number): boolean;
-    uploadFiles(postedBoard: Board, postId: number, fileRequest: FileRequest): boolean;
+    uploadFiles(postedBoard: Board, postId: number, fileRequests: Array<FileRequest>): boolean;
 }
