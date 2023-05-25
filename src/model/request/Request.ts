@@ -14,6 +14,7 @@ export type PostRequest = {
     content: string;
     user: User;
     tags: Array<string>;
+    thumbnailURL: string;
     fileRequests: Array<FileRequest>;
 }
 
