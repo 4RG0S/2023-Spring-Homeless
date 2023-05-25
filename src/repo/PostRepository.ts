@@ -6,6 +6,7 @@ export default interface PostRepository {
     createPost(post: PostRequest): number;
     getPost(postedBoard: Board, postId: number): Post | null;
     getAllPosts(postedBoard: Board, page: number, offset: number): Array<Post>;
+    getPostsByUser(userId: string): Array<Post>;
     // updatePost(postedBoard: Board, postId: number, updatedPost: PostRequest): boolean;
     updatePost(updatedPost: Post): boolean;
     deletePost(postedBoard: Board, postId: number): boolean;
