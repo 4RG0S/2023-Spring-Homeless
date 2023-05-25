@@ -11,6 +11,7 @@ export default class Post extends DateBase {
     private _like: number;
     private _user: User;
     private _tags: Array<string>;
+    private _thumbnailURL?: string
     private _comments?: Array<Comment>;
     private _fileResponseObjects?: Array<FileResponse>;
     
@@ -24,6 +25,7 @@ export default class Post extends DateBase {
         tags: Array<string>,
         createdAt: Date,
         updatedAt?: Date,
+        thumbnailURL?: string,
         comments?: Array<Comment>,  // Can be initialized when user read post's detail.
         fileResponseObjects?: Array<FileResponse>
     ) {
@@ -35,6 +37,7 @@ export default class Post extends DateBase {
         this._like = like;
         this._user = user;
         this._tags = tags;
+        this._thumbnailURL = thumbnailURL;
         this._comments = comments;
         this._fileResponseObjects = fileResponseObjects;
     }
@@ -76,6 +79,10 @@ export default class Post extends DateBase {
         return this._fileResponseObjects;
     }
 
+    get thumbnailURL(): string | undefined {
+        return this._thumbnailURL;
+    }
+
     // Setter
     set id(id: number) {
         this._id = id;
@@ -111,5 +118,9 @@ export default class Post extends DateBase {
 
     set fileResponseObjects(fileResponseObjects: Array<FileResponse> | undefined) {
         this._fileResponseObjects = fileResponseObjects;
+    }
+
+    set thumbnailURL(thumbnailURL: string | undefined) {
+        this._thumbnailURL = thumbnailURL;
     }
 }
