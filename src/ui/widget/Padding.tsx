@@ -31,7 +31,6 @@ function paddingAll({
 }: PaddingAllProps) {
     return (
         <div style={{
-            display: "inline-block",
             padding: size,
         }}>
             {children}
