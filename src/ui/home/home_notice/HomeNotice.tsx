@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DivideContainer from "../../widget/Divider";
 import { ColorConstant } from "../../../GlobalConstant";
-import FlexContainer from "../../widget/FlexContainer";
 import { ResponsiveText } from "../../widget/TextWidgets";
 
 const DUMMY_NOTICE = {
@@ -20,10 +19,12 @@ const HomeNotice = ({ screen_height }: HomeNoticeProps) => {
   return (
     <DivideContainer
       direction="column"
+      ratio={1}
       {...{ minHeight: screen_height, backgroundColor: ColorConstant.BLACK }}
     >
-      <FlexContainer
-        height="75vh"
+      <DivideContainer
+        direction="row"
+        ratio={8}
         {...{
           backgroundImage: `url(${DUMMY_NOTICE.imageUrl})`,
           backgroundRepeat: "no-repeat",
@@ -31,8 +32,8 @@ const HomeNotice = ({ screen_height }: HomeNoticeProps) => {
           backgroundPosition: "center top",
         }}
       >
-        <FlexContainer width="100%" alignItems="flex-start" justifyContent="space-between" {...{margin: "3% 3%"}}>
-          <ResponsiveText {...{color: "white", margin: "0"}}>
+        <DivideContainer direction="row" ratio={1} {...{margin: "2%",  alignItems:"flex-start", justifyContent:"space-between", overflow: "hidden"}}>
+          <ResponsiveText width={["70%", "80%", "85%"]}  {...{color: "white", margin: "0"}}>
             Our best contribution
             <br />
             to the world
@@ -41,29 +42,35 @@ const HomeNotice = ({ screen_height }: HomeNoticeProps) => {
             to={DUMMY_NOTICE.url}
             style={{
               color: "white",
-              fontWeight: 700,
-              textDecorationColor: "white",
-              textDecorationThickness: "0.3px",
-              WebkitTextStroke: "0.3px black",
+              fontWeight: 200,
+              textDecoration: "none",
+              cursor: "pointer"
             }}
           >
             Learn more &gt;
           </Link>
-        </FlexContainer>
-      </FlexContainer>
-      <ResponsiveText fontSize="Large" color="white" fontWeight="500" {...{margin: "1% 3%"}}>{DUMMY_NOTICE.title}</ResponsiveText>
-      {DUMMY_NOTICE.content.split(". ").map((sentence, index) => (
-        <ResponsiveText
-          fontSize="Small"
-          color="white"
-          key={index}
-          {...{ margin: "0 3%" }}
+        </DivideContainer>
+      </DivideContainer>
+
+      <DivideContainer
+        direction="column"
+        ratio={2}
+      >
+        <ResponsiveText width={["70%", "80%", "85%"]} fontSize="Large" color="white" fontWeight="400" {...{margin: "1% 3%"}}>{DUMMY_NOTICE.title}</ResponsiveText>
+        <ResponsiveText 
+          width={["70%", "80%", "70%"]}
+          fontSize="Small" 
+          fontWeight={200}
+          color="white" 
+          {...{ whiteSpace: "pre-line" }}
+          {...{ margin: "2% 3%", marginTop: "0.5%" }}
         >
-          {sentence}
-          {index !== DUMMY_NOTICE.content.split(". ").length - 1 && "."}
-          <br />
+          {DUMMY_NOTICE.content.split(". ").map((sentence, index) => 
+            index !== DUMMY_NOTICE.content.split(". ").length - 1 ? sentence + ". " : sentence
+            ).join("\n")}
         </ResponsiveText>
-      ))}
+      </DivideContainer>
+      
     </DivideContainer>
   );
 };
