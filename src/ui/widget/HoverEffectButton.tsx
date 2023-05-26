@@ -27,6 +27,7 @@ const HoverEffectButton = ({
             style={{
                 color: currentColor,
                 backgroundColor: currentBackgroundColor,
+                cursor: 'pointer',
             }}
             onClick={() => { if (onClick != undefined) onClick(); }}
             onMouseOver={() => {
