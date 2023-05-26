@@ -3,6 +3,8 @@ import DivideContainer from "../../widget/Divider";
 import Intro from "./Intro";
 import { ColorConstant, ResponsiveSizeConstant } from "../../../GlobalConstant";
 import Brief from "./Brief";
+import HomeMenuButton from "./widget/HomeMenuButton";
+import { useNavigate } from "react-router-dom";
 
 type HomeMainProps = {
     screen_height: String
@@ -15,6 +17,8 @@ const HomeMain = ({
     sidebar_min_width,
     topbar_min_height,
 }: HomeMainProps) => {
+    const navigator = useNavigate();
+
     return (
         <DivideContainer direction='row' {...{ minHeight: screen_height }}>
             <DivideContainer direction='column' ratio={20} disappearable={true}
@@ -24,7 +28,28 @@ const HomeMain = ({
                     <Intro />
                 </DivideContainer>
                 <DivideContainer ratio={75} {...{ background: ColorConstant.LIGHT_GREY }}>
-                    {/* Menu Bar */}
+                    <DivideContainer direction="column">
+                        <HomeMenuButton
+                            onClick={() => { }}
+                        >
+                            menu 1
+                        </HomeMenuButton>
+                        <HomeMenuButton
+                            onClick={() => { }}
+                        >
+                            menu 2
+                        </HomeMenuButton>
+                        <HomeMenuButton
+                            onClick={() => { }}
+                        >
+                            menu 3
+                        </HomeMenuButton>
+                        <HomeMenuButton
+                            onClick={() => { }}
+                        >
+                            menu 4
+                        </HomeMenuButton>
+                    </DivideContainer>
                 </DivideContainer>
             </DivideContainer>
             <DivideContainer direction='column' ratio={80}>
