@@ -1,10 +1,8 @@
 import User from "../model/User";
-import { UserRequest } from "../model/request/Request";
 
 export default interface UserRepository {
-    createUser(user: UserRequest): string;
-    getUser(userId: string): User | null;
-    // updateUser(userId: string, updatedUser: UserRequest): boolean;
-    updateUser(updatedUser: User): boolean;
-    deleteUser(userId: string): boolean;
+    createUser(user: User): Promise<string>;
+    getUser(userId: string): Promise<User> | null;
+    updateUser(updatedUser: User): Promise<boolean>;
+    deleteUser(userId: string): Promise<boolean>;
 }

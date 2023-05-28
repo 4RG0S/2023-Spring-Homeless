@@ -1,12 +1,11 @@
 import { Board } from "../model/base/Board";
-import { CommentRequest } from "../model/request/Request";
+import Comment from "../model/Comment";
 
 export default interface CommentRepository {
-    createComment(comment: CommentRequest): number;
-    getComment(commentedPostBoard: Board, commentId: number): Comment;
-    getCommentsByUser(userId: string): Array<Comment>;
-    getCommentsByPost(postedBoard: Board, postId: number): Array<Comment>;
-    // updateComment(commentedPostBoard: Board, commentId: number, updatedComment: CommentRequest): boolean;
-    updateComment(updatedComment: Comment): boolean;
-    deleteComment(commentedPostBoard: Board, commentId: number): boolean;
+    createComment(comment: Comment): Promise<number>;
+    getComment(commentedPostBoard: Board, commentId: number): Promise<Comment>;
+    getCommentsByUser(userId: string): Promise<Array<Comment>>;
+    getCommentsByPost(postedBoard: Board, postId: number): Promise<Array<Comment>>;
+    updateComment(updatedComment: Comment): Promise<boolean>;
+    deleteComment(commentedPostBoard: Board, commentId: number): Promise<boolean>;
 }

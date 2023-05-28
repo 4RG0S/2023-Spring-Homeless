@@ -1,15 +1,50 @@
-import { FileRequest } from "./request/Request";
+export class FileFrom {
+    private _name?: string;
+    private _id?: string;
+    private _file?: File;
 
-export type FileResponse = {
-    name: string;
-    id: string;
-    downloadURL: string;
+    constructor(
+        name?: string,
+        id?: string,
+        file?: File
+    ) {
+        this._file = file;
+        this._name = name;
+        this._id = id;
+    }
+
+    // Getter
+    get name(): string | undefined {
+        return this._name;
+    }
+
+    get id(): string | undefined {
+        return this._id;
+    }
+    
+    get file(): File | undefined {
+        return this._file;
+    }
+
+    // Setter
+    set name(name: string | undefined) {
+        this._name = name;
+    }
+
+    set id(id: string | undefined) {
+        this._id = id;
+    }
+
+    set file(file: File | undefined) {
+        this._file = file;
+    }
+
 }
 
-export default class FileForm {
-    private _files: Array<FileRequest>;
+export default class FileFormData {
+    private _files: Array<FileFrom>;
 
-    constructor(files: Array<FileRequest>) {
+    constructor(files: Array<FileFrom>) {
         this._files = files;
     }
 
@@ -17,13 +52,13 @@ export default class FileForm {
         const formData = new FormData();
 
         this._files.forEach((file, index) => {
-            formData.append(`file${index}`, file.file, file.name);
+            if (file) formData.append(`file${index}`, file.file as File, file.name);
         });
 
         return formData;
     }
 
-    get formData() {
+    get requestFormData() {
         return this.makeFormData();
     }
 

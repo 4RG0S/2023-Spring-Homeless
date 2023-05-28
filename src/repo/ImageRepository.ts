@@ -1,5 +1,5 @@
-import { ImageRequest } from "../model/request/Request";
+import Image from "../model/Image";
 
 export default interface ImageRepository {
-    uploadImage(image: ImageRequest): string;
+    uploadImage(image: Image): Promise<string>;
 }

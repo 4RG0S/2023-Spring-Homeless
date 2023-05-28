@@ -1,7 +1,7 @@
-import { FileResponse } from "./FileForm";
 import User from "./User";
 import { Board } from "./base/Board";
 import DateBase from "./base/DateBase";
+import { FileFrom } from "./FileForm";
 
 export default class Post extends DateBase {
     private _id: number;
@@ -13,7 +13,7 @@ export default class Post extends DateBase {
     private _tags: Array<string>;
     private _thumbnailURL?: string
     private _comments?: Array<Comment>;
-    private _fileResponseObjects?: Array<FileResponse>;
+    private _fileObjects?: Array<FileFrom>;
     
     constructor(
         id: number,
@@ -27,7 +27,7 @@ export default class Post extends DateBase {
         updatedAt?: Date,
         thumbnailURL?: string,
         comments?: Array<Comment>,  // Can be initialized when user read post's detail.
-        fileResponseObjects?: Array<FileResponse>
+        fileObjects?: Array<FileFrom>
     ) {
         super(createdAt, updatedAt);
         this._id = id;
@@ -39,7 +39,7 @@ export default class Post extends DateBase {
         this._tags = tags;
         this._thumbnailURL = thumbnailURL;
         this._comments = comments;
-        this._fileResponseObjects = fileResponseObjects;
+        this._fileObjects = fileObjects;
     }
 
     // Getter
@@ -75,8 +75,8 @@ export default class Post extends DateBase {
         return this._comments;
     }
 
-    get fileResponseObjects(): Array<FileResponse> | undefined {
-        return this._fileResponseObjects;
+    get fileObjects(): Array<FileFrom> | undefined {
+        return this._fileObjects;
     }
 
     get thumbnailURL(): string | undefined {
@@ -116,8 +116,8 @@ export default class Post extends DateBase {
         this._comments = comments;
     }
 
-    set fileResponseObjects(fileResponseObjects: Array<FileResponse> | undefined) {
-        this._fileResponseObjects = fileResponseObjects;
+    set fileObjects(fileObjects: Array<FileFrom> | undefined) {
+        this._fileObjects = fileObjects;
     }
 
     set thumbnailURL(thumbnailURL: string | undefined) {
