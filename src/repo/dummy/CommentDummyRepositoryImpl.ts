@@ -14,30 +14,8 @@ export default class CommentDummyRepositoryImpl implements CommentRepository {
         new Date(Date.now())
     );
 
-    private _posts: Array<Post> = [
-        new Post(
-            0, 
-            Board.FREE,
-            "<title1>",
-            "<content1>",
-            1,
-            this._user,
-            new Array<string>("<tag>", "<tag>"),
-            new Date(Date.now())
-        ),
-        new Post(
-            0, 
-            Board.FREE,
-            "<title2>",
-            "<content2>",
-            3,
-            this._user,
-            new Array<string>("<tag>", "<tag>"),
-            new Date(Date.now())
-        ),
-    ];
-
     private _comment: Comment = new Comment(
+        0,
         0,
         Board.FREE,
         "<content1>",
@@ -45,6 +23,27 @@ export default class CommentDummyRepositoryImpl implements CommentRepository {
         this._user,
         new Date(Date.now())
     );
+
+    private _comments: Array<Comment> = [
+        new Comment(
+            0,
+            0,
+            Board.FREE,
+            "<content1>",
+            0,
+            this._user,
+            new Date(Date.now())
+        ),
+        new Comment(
+            1,
+            0,
+            Board.FREE,
+            "<content2>",
+            0,
+            this._user,
+            new Date(Date.now())
+        )
+    ];
 
     async createComment(comment: Comment): Promise<number> {
         return 0;
@@ -54,12 +53,12 @@ export default class CommentDummyRepositoryImpl implements CommentRepository {
         return this._comment;
     }
 
-    async getCommentsByUser(userId: string): Promise<User | null> {
-        return this._user;
+    async getCommentsByUser(userId: string): Promise<Array<Comment>> {
+        return this._comments;
     }
 
-    async getCommentsByPost(postedBoard: Board, postId: number): Promise<Array<Post>> {
-        return this._posts;
+    async getCommentsByPost(postedBoard: Board, postId: number): Promise<Array<Comment>> {
+        return this._comments;
     }
 
     async updateComment(updatedComment: Comment): Promise<boolean> {
