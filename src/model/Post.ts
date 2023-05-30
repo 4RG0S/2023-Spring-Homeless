@@ -2,6 +2,7 @@ import User from "./User";
 import { Board } from "./base/Board";
 import DateBase from "./base/DateBase";
 import { FileFrom } from "./FileForm";
+import Comment from "./Comment";
 
 export default class Post extends DateBase {
     private _id: number;
