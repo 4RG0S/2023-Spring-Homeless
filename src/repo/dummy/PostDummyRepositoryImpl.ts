@@ -1,3 +1,4 @@
+import Comment from "../../model/Comment";
 import { FileFrom } from "../../model/FileForm";
 import Post from "../../model/Post";
 import User from "../../model/User";
@@ -14,6 +15,27 @@ export default class PostDummyRepositoryImpl implements PostRepository {
         new Date(Date.now())
     );
 
+    private _comments: Array<Comment> = [
+        new Comment(
+            0,
+            0,
+            Board.FREE,
+            "<content1>",
+            0,
+            this._user,
+            new Date(Date.now())
+        ),
+        new Comment(
+            1,
+            0,
+            Board.FREE,
+            "<content2>",
+            0,
+            this._user,
+            new Date(Date.now())
+        )
+    ];
+
     private _post = new Post(
         0, 
         Board.FREE,
@@ -22,7 +44,10 @@ export default class PostDummyRepositoryImpl implements PostRepository {
         1,
         this._user,
         new Array<string>("<tag>", "<tag>"),
-        new Date(Date.now())
+        new Date(Date.now()),
+        undefined,
+        "https://image.aladin.co.kr/product/27011/87/cover500/f822730421_1.jpg",
+        this._comments
     );
 
     private _posts: Array<Post> = [
@@ -34,7 +59,9 @@ export default class PostDummyRepositoryImpl implements PostRepository {
             1,
             this._user,
             new Array<string>("<tag>", "<tag>"),
-            new Date(Date.now())
+            new Date(Date.now()),
+            undefined,
+            "https://image.aladin.co.kr/product/27011/87/cover500/f822730421_1.jpg"
         ),
         new Post(
             1, 
@@ -54,7 +81,9 @@ export default class PostDummyRepositoryImpl implements PostRepository {
             1,
             this._user,
             new Array<string>("<tag>", "<tag>"),
-            new Date(Date.now())
+            new Date(Date.now()),
+            undefined,
+            "https://image.aladin.co.kr/product/27011/87/cover500/f822730421_1.jpg"
         ),
         new Post(
             1, 
