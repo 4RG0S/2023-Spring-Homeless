@@ -4,6 +4,7 @@ import DateBase from "./base/DateBase";
 
 export default class Comment extends DateBase {
     private _id: number;
+    private _commentedPostId: number;
     private _commentedPostBoard: Board;
     private _content: string;
     private _like: number;
@@ -11,6 +12,7 @@ export default class Comment extends DateBase {
 
     constructor(
         id: number,
+        commentedPostId: number,
         commentedPostBoard: Board,
         content: string,
         like: number,
@@ -20,6 +22,7 @@ export default class Comment extends DateBase {
     ) {
         super(createdAt, updatedAt);
         this._id = id;
+        this._commentedPostId = commentedPostId;
         this._commentedPostBoard = commentedPostBoard;
         this._content = content;
         this._like = like;
@@ -29,6 +32,10 @@ export default class Comment extends DateBase {
     // Getter
     get id(): number {
         return this._id;
+    }
+
+    get commentedPostId(): number {
+        return this._commentedPostId;
     }
 
     get commentedPostBoard(): Board {
@@ -50,6 +57,10 @@ export default class Comment extends DateBase {
     // Setter
     set id(id: number) {
         this._id = id;
+    }
+
+    set commentedPostId(commentedPostId: number) {
+        this._commentedPostId = commentedPostId;
     }
 
     set commentedPostBoard(commentedPostBoard: Board) {
