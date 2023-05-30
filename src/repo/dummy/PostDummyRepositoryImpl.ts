@@ -7,6 +7,19 @@ import PostRepository from "../PostRepository";
 
 export default class PostDummyRepositoryImpl implements PostRepository {
 
+    private static instance: PostDummyRepositoryImpl;
+
+    private constructor() {
+        // private constructor to prevent instantiation
+    }
+
+    public static getInstance(): PostDummyRepositoryImpl {
+        if (!PostDummyRepositoryImpl.instance) {
+            PostDummyRepositoryImpl.instance = new PostDummyRepositoryImpl();
+        }
+        return PostDummyRepositoryImpl.instance;
+    }
+
     private _user: User = new User(
         "<id>",
         "<name>",

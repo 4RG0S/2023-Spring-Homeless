@@ -2,6 +2,20 @@ import User from "../../model/User";
 import UserRepository from "../UserRepository";
 
 export default class UserDummyRepositoryImpl implements UserRepository {
+
+    private static instance: UserDummyRepositoryImpl;
+
+    private constructor() {
+        // private constructor to prevent instantiation
+    }
+
+    public static getInstance(): UserDummyRepositoryImpl {
+        if (!UserDummyRepositoryImpl.instance) {
+            UserDummyRepositoryImpl.instance = new UserDummyRepositoryImpl();
+        }
+        return UserDummyRepositoryImpl.instance;
+    }
+
     async createUser(user: User): Promise<string> {
         return "<id>";
     }

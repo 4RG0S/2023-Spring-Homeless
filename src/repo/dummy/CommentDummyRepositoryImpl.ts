@@ -6,6 +6,19 @@ import CommentRepository from "../CommentRepository";
 
 export default class CommentDummyRepositoryImpl implements CommentRepository {
 
+    private static instance: CommentDummyRepositoryImpl;
+
+    private constructor() {
+        // private constructor to prevent instantiation
+    }
+
+    public static getInstance(): CommentDummyRepositoryImpl {
+        if (!CommentDummyRepositoryImpl.instance) {
+            CommentDummyRepositoryImpl.instance = new CommentDummyRepositoryImpl();
+        }
+        return CommentDummyRepositoryImpl.instance;
+    }
+
     private _user: User = new User(
         "<id>",
         "<name>",
