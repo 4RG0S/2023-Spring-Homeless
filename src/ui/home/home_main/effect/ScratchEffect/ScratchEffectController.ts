@@ -1,5 +1,6 @@
 import TextGroup from "./TextGroup";
-import { ResponsiveSizeConstant } from "../../../../../GlobalConstant";
+import TransparentBallGroup from "./TransparentBallGroup";
+import { ColorConstant, ResponsiveSizeConstant } from "../../../../../GlobalConstant";
 
 export class ScratchEffectController {
     private canvas: HTMLCanvasElement;
@@ -7,6 +8,7 @@ export class ScratchEffectController {
     private stageWidth: number;
     private stageHeight: number;
     private textGroup: TextGroup;
+    private ballGroup: TransparentBallGroup;
 
     constructor(canvas: HTMLCanvasElement) {
         this.canvas = canvas;
@@ -15,8 +17,10 @@ export class ScratchEffectController {
         this.stageWidth = this.canvas.width;
 
         this.textGroup = new TextGroup(this.ctx, this.stageWidth, this.stageHeight);
+        this.ballGroup = new TransparentBallGroup(this.ctx);
 
         window.addEventListener('resize', this.resize.bind(this), false);
+        this.canvas.addEventListener('mousemove', this.drag.bind(this), false);
         this.resize();
 
         requestAnimationFrame(this.animate.bind(this));
@@ -42,8 +46,14 @@ export class ScratchEffectController {
 
     animate() {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
-        if (this.stageWidth > ResponsiveSizeConstant.MOBILE_SCREEN_MAX_WIDTH)
+        if (this.stageWidth > ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH) {
             this.textGroup.draw();
+            this.ballGroup.draw();
+        }
         requestAnimationFrame(this.animate.bind(this));
+    }
+
+    drag(event: MouseEvent) {
+        this.ballGroup.push(event.offsetX, event.offsetY);
     }
 }
