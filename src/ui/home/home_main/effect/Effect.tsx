@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { WaveEffectController } from "./WaveEffect/WaveEffectController";
+import { ScratchEffectController } from "./ScratchEffect/ScratchEffectController";
 
 export const Effect = ({...additionalAttributes}): JSX.Element => {
 
@@ -8,7 +8,7 @@ export const Effect = ({...additionalAttributes}): JSX.Element => {
     useEffect(() => {
         if (canvasRef.current) {
             const canvas: HTMLCanvasElement = canvasRef.current as HTMLCanvasElement;
-            new WaveEffectController(canvas);
+            new ScratchEffectController(canvas);
         } else {
             console.log("error");
         }
