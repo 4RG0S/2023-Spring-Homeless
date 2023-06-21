@@ -17,8 +17,10 @@ export default class TextGroup {
             new Text("Cybersecurity", 1, "italic", "400", "Times New Roman"),
             new Text("Reversing", 0.7, "normal", "200", "Tahoma"),
             new Text("Decompiling", 1, "italic", "200", "Georgia"),
-            new Text("Static Analysis", 1, "normal", "100", "Courier New"),
-            new Text("Disassembler", 1, "normal", "300", "Trebuchet MS"),
+            new Text("Static Analysis", 1, "normal", "bold", "Courier New"),
+            new Text("Disassembler", 1, "normal", "200", "Verdana"),
+            new Text("Assembly", 0.7, "italic", "300", "Trebuchet MS"),
+            new Text("System hacking", 1, "normal", "300", "Times New Roman"),
         ];
     }
 
