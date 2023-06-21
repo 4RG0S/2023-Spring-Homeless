@@ -2,9 +2,10 @@ import React from "react";
 import FlexContainer from "../../widget/FlexContainer";
 import { ResponsiveText, Text } from "../../widget/TextWidgets";
 
-const Brief = (): JSX.Element => {
+const Brief = ({...additionalAttributes}): JSX.Element => {
     return (
-        <FlexContainer width='100%' flexDirection='column' justifyContent='space-between' {...{ margin: '25px 35px' }}>
+        <FlexContainer width='100%' flexDirection='column' justifyContent='space-between' 
+            {...{ margin: '25px 35px', ...additionalAttributes }}>
             <Text fontSize='3rem' fontWeight={100} {...{ margin: 0 }}>ARGOS</Text>
             <FlexContainer width='100%' flexDirection='column' justifyContent='flex-end' alignItems='flex-end'>
                 <ResponsiveText fontSize='Large' width={['90%', '85%', '80%']} fontWeight={300} {...{ maxWidth: '600px', margin: 0 }}>
