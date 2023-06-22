@@ -1,6 +1,7 @@
 export const ColorConstant = {
     BLACK: '#181818',
     LIGHT_GREY: '#EFEFEF',
+    MEDIUM_GREY: '#E8E8E8',
     DEEP_GREY: '#D3D3D3',
     WHITE: '#F5F5F5'
 };
