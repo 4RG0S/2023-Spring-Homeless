@@ -41,13 +41,12 @@ const HomeNotice = ({ screen_height }: HomeNoticeProps) => {
           <Link
             to={DUMMY_NOTICE.url}
             style={{
-              color: "white",
-              fontWeight: 200,
-              textDecoration: "none",
-              cursor: "pointer"
+              fontWeight: 300,
+              textDecorationColor: "white",
+              cursor: "pointer",
             }}
           >
-            Learn more &gt;
+            <ResponsiveText width={["100%", "100%", "100%"]} fontSize="Small" {...{color: "white", margin: "0"}}>Learn more</ResponsiveText>
           </Link>
         </DivideContainer>
       </DivideContainer>
@@ -63,7 +62,7 @@ const HomeNotice = ({ screen_height }: HomeNoticeProps) => {
           fontWeight={200}
           color="white" 
           {...{ whiteSpace: "pre-line" }}
-          {...{ margin: "2% 3%", marginTop: "0.5%" }}
+          {...{ margin: "5% 5%", marginTop: "0.5%" }}
         >
           {DUMMY_NOTICE.content.split(". ").map((sentence, index) => 
             index !== DUMMY_NOTICE.content.split(". ").length - 1 ? sentence + ". " : sentence
