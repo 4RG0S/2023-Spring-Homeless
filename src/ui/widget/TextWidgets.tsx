@@ -82,7 +82,7 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
         fontWeight: fontWeight,
         width: selectedWidth,
         height: height,
-        wordWrap: 'break-word',
+        // wordWrap: 'break-word',
         ...otherAttributes
     }}>
         {children}
