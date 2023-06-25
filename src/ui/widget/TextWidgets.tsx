@@ -7,6 +7,7 @@ type TextProps = {
     color?: string,
     fontSize?: string | number,
     fontWeight?: string | number,
+    wordWarp?: 'normal' | 'break-word',
     width?: string,  // <length>
     height?: string  // <length>
     id?: string,
@@ -18,6 +19,7 @@ type ResponsiveTextProps = {
     color?: string,
     fontSize?: 'Large' | 'Medium' | 'Small' | string,
     fontWeight?: string | number,
+    wordWarp?: 'normal' | 'break-word',
     width?: string | Array<string>,  // <length>
     height?: string  // <length>
     id?: string,
@@ -29,6 +31,7 @@ export const Text: React.FC<TextProps> = ({
     color = undefined,
     fontSize = undefined,
     fontWeight = undefined,
+    wordWarp = 'normal',
     width = 'auto',
     height = 'auto',
     id = undefined,
@@ -39,6 +42,7 @@ export const Text: React.FC<TextProps> = ({
         color: color,
         fontSize: fontSize,
         fontWeight: fontWeight,
+        wordWrap: wordWarp,
         width: width,
         height: height,
         ...otherAttributes
@@ -52,6 +56,7 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
     color = undefined,
     fontSize = 'Large',
     fontWeight = undefined,
+    wordWarp = 'normal',
     width = 'auto',
     height = 'auto',
     id = undefined,
@@ -80,9 +85,9 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
         color: color,
         fontSize: selectedFontSize,
         fontWeight: fontWeight,
+        wordWrap: wordWarp,
         width: selectedWidth,
         height: height,
-        // wordWrap: 'break-word',
         ...otherAttributes
     }}>
         {children}

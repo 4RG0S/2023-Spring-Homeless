@@ -5,8 +5,8 @@ type ScaffoldProps = {
     children?: React.ReactNode,
     height?: string,
     width?: string,
-    minHeight?: string,
-    minWidth?: string
+    minheight?: string,
+    minwidth?: string
 }
 
 const scaffoldConstant = {
@@ -18,24 +18,24 @@ const scaffoldConstant = {
 const StyledScaffold = styled.div<ScaffoldProps>`
     height: ${props => props.height};
     width: ${props => props.width};
-    min-height: ${props => props.minHeight};
-    min-width: ${props => props.minWidth};
+    min-height: ${props => props.minheight};
+    min-width: ${props => props.minwidth};
 `;
 
 const Scaffold: React.FC<ScaffoldProps> = ({
     children = undefined,
     height = undefined,
     width = scaffoldConstant.SCREEN_WIDTH,
-    minHeight = undefined,
-    minWidth = scaffoldConstant.SCREEN_MIN_WIDTH,
+    minheight = undefined,
+    minwidth = scaffoldConstant.SCREEN_MIN_WIDTH,
     ...otherAttributes
 }) => {
     return (
         <StyledScaffold 
             height={height} 
             width={width} 
-            minHeight={minHeight} 
-            minWidth={minWidth} 
+            minheight={minheight} 
+            minwidth={minwidth} 
             style={{...otherAttributes}}
         >
             {children}
