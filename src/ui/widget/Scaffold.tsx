@@ -1,4 +1,5 @@
 import React from "react"
+import { styled } from "styled-components"
 
 type ScaffoldProps = {
     children?: React.ReactNode,
@@ -14,6 +15,13 @@ const scaffoldConstant = {
     SCREEN_MIN_WIDTH: '280px'
 }
 
+const StyledScaffold = styled.div<ScaffoldProps>`
+    height: ${props => props.height};
+    width: ${props => props.width};
+    min-height: ${props => props.minHeight};
+    min-width: ${props => props.minWidth};
+`;
+
 const Scaffold: React.FC<ScaffoldProps> = ({
     children = undefined,
     height = undefined,
@@ -23,15 +31,15 @@ const Scaffold: React.FC<ScaffoldProps> = ({
     ...otherAttributes
 }) => {
     return (
-        <div style={{
-            height: height,
-            width: width,
-            minHeight: minHeight,
-            minWidth: minWidth,
-            ...otherAttributes
-        }}>
+        <StyledScaffold 
+            height={height} 
+            width={width} 
+            minHeight={minHeight} 
+            minWidth={minWidth} 
+            style={{...otherAttributes}}
+        >
             {children}
-        </div>
+        </StyledScaffold>
     )
 }
 
