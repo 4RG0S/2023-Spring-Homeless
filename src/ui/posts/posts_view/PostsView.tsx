@@ -5,6 +5,7 @@ import Post from "../../../model/Post";
 import { Board } from "../../../model/base/Board";
 import Scaffold from "../../widget/Scaffold";
 import PostCard from "../post_card/PostCard";
+import FlexContainer from "../../widget/FlexContainer";
 
 
 const PostsView = (): JSX.Element => {
@@ -22,9 +23,11 @@ const PostsView = (): JSX.Element => {
     if (posts?.length === 0) return <></>;
 
     return (
-        <Scaffold>
-            <PostCard post={posts[0]}></PostCard>
-        </Scaffold>
+        <FlexContainer flexWrap="wrap" alignContent="flex-start">
+            {posts.map(post => (
+                <PostCard key={post.id} post={post} />
+            ))}
+        </FlexContainer>
     );
 }
 

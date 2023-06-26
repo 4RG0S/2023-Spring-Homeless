@@ -17,7 +17,7 @@ type TextProps = {
 type ResponsiveTextProps = {
     children: React.ReactNode,
     color?: string,
-    fontSize?: 'Large' | 'Medium' | 'Small' | string,
+    fontSize?: 'Large' | 'Medium' | 'Small' | 'Tiny' | string,
     fontWeight?: string | number,
     wordWarp?: 'normal' | 'break-word',
     width?: string | Array<string>,  // <length>
@@ -75,6 +75,7 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
     if (fontSize === 'Large') selectedFontSize = ResponsiveFontSizeConstant.LARGE;
     else if (fontSize === 'Medium') selectedFontSize = ResponsiveFontSizeConstant.MEDIUM;
     else if (fontSize === 'Small') selectedFontSize = ResponsiveFontSizeConstant.SMALL;
+    else if (fontSize === 'Tiny') selectedFontSize = ResponsiveFontSizeConstant.TINY;
     else selectedFontSize = fontSize;
 
     if (isMobileScreen) selectedWidth = typeof width === 'object' ? width[0] : width;

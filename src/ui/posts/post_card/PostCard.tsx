@@ -4,6 +4,7 @@ import FlexContainer from "../../widget/FlexContainer";
 import { ColorConstant } from "../../../GlobalConstant";
 import { ResponsiveText } from "../../widget/TextWidgets";
 import logo from "../../../assets/svg/logo.svg";
+import FlexItem from "../../widget/FlexItem";
 
 
 type PostCardProps = {
@@ -12,15 +13,17 @@ type PostCardProps = {
 
 const PostCard = ({post}: PostCardProps): JSX.Element => {
     return (
-        <FlexContainer flexDirection='column' 
-            {...{background: ColorConstant.BLACK, borderRadius: '20px'}}>
-            <Thumbnail post={post} />
-            <div style={{padding: '0 20px'}}>
-                <UserDateIcon post={post} />
-                <TitleBoard post={post} />
-                <Tags post={post} />
-            </div>
-        </FlexContainer>
+        <FlexItem flexBasis="auto">
+            <FlexContainer flexDirection='column' 
+                {...{background: ColorConstant.BLACK, borderRadius: '20px', margin: '10px'}}>
+                <Thumbnail post={post} />
+                <div style={{padding: '0 20px'}}>
+                    <UserDateIcon post={post} />
+                    <TitleBoard post={post} />
+                    <Tags post={post} />
+                </div>
+            </FlexContainer>
+        </FlexItem>
     );
 };
 
@@ -37,7 +40,7 @@ const UserDateIcon = ({post}: PostCardProps) => {
 
     return (
         <FlexContainer justifyContent='space-between' alignItems="center">
-            <ResponsiveText fontSize='Small' fontWeight={200} color={ColorConstant.WHITE}>
+            <ResponsiveText fontSize='Tiny' fontWeight={200} color={ColorConstant.WHITE}>
                 {post.user.name} | {createdAt}
             </ResponsiveText>
             <UserIconSmall imgURL={imgURL} />
@@ -48,10 +51,10 @@ const UserDateIcon = ({post}: PostCardProps) => {
 const TitleBoard = ({post}: PostCardProps) => {
     return (
         <>
-        <ResponsiveText fontSize="Small" fontWeight={400} color={ColorConstant.WHITE} wordWarp="break-word">
+        <ResponsiveText fontSize="Tiny" fontWeight={400} color={ColorConstant.WHITE} wordWarp="break-word">
                 {post.title}
         </ResponsiveText>
-        <ResponsiveText fontSize="Small" fontWeight={200} color={ColorConstant.DEEP_GREY} {...{margin: '0'}}>
+        <ResponsiveText fontSize="Tiny" fontWeight={200} color={ColorConstant.DEEP_GREY} {...{margin: '0'}}>
             {post.postedBoard} Board
         </ResponsiveText>
         </>
@@ -62,7 +65,7 @@ const Tags = ({post}: PostCardProps) => {
     return (
         <FlexContainer flexWrap="wrap" {...{margin: '10px 0 20px 0'}}>
             {post.tags.map(tag => (
-                <ResponsiveText key={tag} fontSize="Small" fontWeight={200} color={ColorConstant.LIGHT_BLUE} 
+                <ResponsiveText key={tag} fontSize="Tiny" fontWeight={200} color={ColorConstant.LIGHT_BLUE} 
                     {...{margin: '0 10px 0 0'}}>
                     #{tag}
                 </ResponsiveText>

@@ -10,7 +10,8 @@ export const ColorConstant = {
 export const ResponsiveFontSizeConstant = {
     LARGE: '4rem',
     MEDIUM: '2.5rem',
-    SMALL: '1.5rem'
+    SMALL: '1.5rem',
+    TINY: '1rem'
 };
 
 export const ResponsiveSizeConstant = {
