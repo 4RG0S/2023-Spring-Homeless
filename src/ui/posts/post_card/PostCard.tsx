@@ -4,7 +4,7 @@ import FlexContainer from "../../widget/FlexContainer";
 import { ColorConstant } from "../../../GlobalConstant";
 import { ResponsiveText } from "../../widget/TextWidgets";
 import logo from "../../../assets/svg/logo.svg";
-import FlexItem from "../../widget/FlexItem";
+import GridItem from "../../widget/GridItem";
 
 
 type PostCardProps = {
@@ -12,8 +12,10 @@ type PostCardProps = {
 }
 
 const PostCard = ({post}: PostCardProps): JSX.Element => {
+    const gridRowSize = post.thumbnailURL ? 2 : 1;
+
     return (
-        <FlexItem flexBasis="auto">
+        <GridItem gridRowStart="auto" gridRowEnd={`span ${gridRowSize}`}>
             <FlexContainer flexDirection='column' 
                 {...{background: ColorConstant.BLACK, borderRadius: '20px', margin: '10px'}}>
                 <Thumbnail post={post} />
@@ -23,20 +25,19 @@ const PostCard = ({post}: PostCardProps): JSX.Element => {
                     <Tags post={post} />
                 </div>
             </FlexContainer>
-        </FlexItem>
+        </GridItem>
     );
 };
 
 const Thumbnail = ({post}: PostCardProps) => {
-    if (post.thumbnailURL)
-        return (<img src={post.thumbnailURL} width='100%' height='200px' 
-            style={{borderRadius: '20px', objectFit: 'cover'}} />);
+    if (post.thumbnailURL) return (<img src={post.thumbnailURL} width='100%' height='200px' 
+                                        style={{borderRadius: '20px', objectFit: 'cover'}} />);
     else return <></>;
 }
 
 const UserDateIcon = ({post}: PostCardProps) => {
-    const createdAt = `${post.createdAt.getFullYear()}.${post.createdAt.getMonth()}.${post.createdAt.getDate()}.`
-    const imgURL = post.thumbnailURL ? post.thumbnailURL : logo;
+    const createdAt = `${post.createdAt.getFullYear()}.${post.createdAt.getMonth() + 1}.${post.createdAt.getDate()}.`
+    const imgURL = post.user.imageURL ? post.user.imageURL : logo;
 
     return (
         <FlexContainer justifyContent='space-between' alignItems="center">
@@ -75,7 +76,8 @@ const Tags = ({post}: PostCardProps) => {
 }
 
 const UserIconSmall = ({imgURL}: {imgURL: string}) => (
-    <img src={imgURL} width='35rem' height='35rem' style={{borderRadius: '50%', objectFit: 'cover'}} />
+    <img src={imgURL} width='35px' height='35px' 
+         style={{borderRadius: '50%', objectFit: 'cover', margin: '10px 0'}} />
 );
 
 export default PostCard;
