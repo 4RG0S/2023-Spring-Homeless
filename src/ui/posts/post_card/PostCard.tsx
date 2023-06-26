@@ -76,7 +76,7 @@ const Tags = ({post}: PostCardProps) => {
 }
 
 const UserIconSmall = ({imgURL}: {imgURL: string}) => (
-    <img src={imgURL} width='35px' height='35px' 
+    <img src={imgURL} width='30px' height='30px' 
          style={{borderRadius: '50%', objectFit: 'cover', margin: '10px 0'}} />
 );
 
