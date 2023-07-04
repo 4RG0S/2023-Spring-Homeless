@@ -10,13 +10,14 @@ import PostsView from '../posts_view/PostsView';
 
 const PostBoardScreen = () => {
     const [selectedMenu, setSelectedMenu] = useState(0);
+    const menuTextSize = "Tiny";
 
-    return <Scaffold>
+    return <Scaffold height='100vh' {...{background: ColorConstant.BLACK}}>
+        <AppBar />
         <BlackBackground>
-            <AppBar />
-            <DivideContainer direction='row' disappearable={true}
-                maxConditionWidth={ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH}>
-                <DivideContainer direction='column' ratio={2}>
+            <DivideContainer direction='row' height='100%'>
+                <DivideContainer direction='column' ratio={2} disappearable={true} height='100%'
+                    maxConditionWidth={ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH}>
                     <MenuBarContainer>
                         <InterestCategory>
                             <FlexContainer alignItems='center'>
@@ -26,16 +27,16 @@ const PostBoardScreen = () => {
                             <Text fontSize={20} {...{ margin: 0 }}>⋯</Text>
                         </InterestCategory>
                         <MenuBarItem $selected={selectedMenu == 0} onClick={() => setSelectedMenu(0)}>
-                            <ResponsiveText fontSize='Small' {...{margin: '0'}}>ANNOUNCEMENT</ResponsiveText>
+                            <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>ANNOUNCEMENT</ResponsiveText>
                         </MenuBarItem>
                         <MenuBarItem $selected={selectedMenu == 1} onClick={() => setSelectedMenu(1)}>
-                            <ResponsiveText fontSize='Small' {...{margin: '0'}}>FREE</ResponsiveText>
+                            <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>FREE</ResponsiveText>
                         </MenuBarItem>
                         <MenuBarItem $selected={selectedMenu == 2} onClick={() => setSelectedMenu(2)}>
-                            <ResponsiveText fontSize='Small' {...{margin: '0'}}>GALLERY</ResponsiveText>
+                            <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>GALLERY</ResponsiveText>
                         </MenuBarItem>
                         <MenuBarItem $selected={selectedMenu == 3} onClick={() => setSelectedMenu(3)}>
-                            <ResponsiveText fontSize='Small' {...{margin: '0'}}>EVENT</ResponsiveText>
+                            <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>EVENT</ResponsiveText>
                         </MenuBarItem>
                     </MenuBarContainer>
                     <MenuBarContainer>
@@ -46,20 +47,20 @@ const PostBoardScreen = () => {
                             </FlexContainer>
                         </InterestCategory>
                         <MenuBarItem $selected={selectedMenu == 4} onClick={() => setSelectedMenu(4)}>
-                            <ResponsiveText fontSize='Small' {...{margin: '0'}}>ARM</ResponsiveText>
+                            <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>ARM</ResponsiveText>
                         </MenuBarItem>
                         <MenuBarItem $selected={selectedMenu == 5} onClick={() => setSelectedMenu(5)}>
-                            <ResponsiveText fontSize='Small' {...{margin: '0'}}>ALGORITHM</ResponsiveText>
+                            <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>ALGORITHM</ResponsiveText>
                         </MenuBarItem>
                         <MenuBarItem $selected={selectedMenu == 6} onClick={() => setSelectedMenu(6)}>
-                            <ResponsiveText fontSize='Small' {...{margin: '0'}}>HARDWARE</ResponsiveText>
+                            <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>HARDWARE</ResponsiveText>
                         </MenuBarItem>
                         <MenuBarItem $selected={selectedMenu == 7} onClick={() => setSelectedMenu(7)}>
-                            <ResponsiveText fontSize='Small' {...{margin: '0'}}>WEB DEVELOPMENT</ResponsiveText>
+                            <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>WEB DEVELOPMENT</ResponsiveText>
                         </MenuBarItem>
                     </MenuBarContainer>
                 </DivideContainer>
-                <DivideContainer ratio={8}>
+                <DivideContainer ratio={8} height='100%'>
                     <PostsView />
                 </DivideContainer>
             </DivideContainer>
@@ -72,7 +73,7 @@ export default PostBoardScreen;
 const BlackBackground = styled.div`
     background-color: ${ColorConstant.BLACK};
     color: ${ColorConstant.WHITE};
-    height: 100vh;
+    height: 100%;
 `;
 
 const InterestCategory = styled.div`

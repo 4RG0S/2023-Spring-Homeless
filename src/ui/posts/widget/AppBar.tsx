@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components"
 import { ColorConstant } from "../../../GlobalConstant";
 import { ResponsiveText } from "../../widget/TextWidgets";
@@ -12,7 +13,7 @@ const LogoIconMedium = () => (
 );
 
 const UserIconSmall = ({imgURL}: {imgURL: string}) => (
-    <img src={imgURL} width='35px' height='35px' 
+    <img src={imgURL} width='30px' height='30px' 
          style={{borderRadius: '50%', objectFit: 'cover', margin: '10px 0'}} />
 );
 
@@ -31,12 +32,14 @@ const AppBar = () => {
     }, []);
 
     return <AppBarContainer>
-        <AppBarItem $changeCursor={true}>
-            <LogoIconMedium />
-            <ResponsiveText fontSize="Tiny" {...{margin: '0', display: 'flex'}}>
-                ARGOS
-            </ResponsiveText>
-        </AppBarItem>
+        <Link to='/' style={{textDecoration: 'none'}}>
+            <AppBarItem $changeCursor={true}>
+                <LogoIconMedium />
+                <ResponsiveText fontSize="Tiny" {...{margin: '0', display: 'flex'}}>
+                    ARGOS
+                </ResponsiveText>
+            </AppBarItem>
+        </Link>
         <AppBarItem $flexGrow={true}>{<MenuBar />}</AppBarItem>
         <AppBarItem $changeCursor={true}>
             <UserIconSmall imgURL={imgURL} />
