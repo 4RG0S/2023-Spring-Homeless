@@ -33,22 +33,22 @@ const HomeMain = ({
                         <HomeMenuButton
                             onClick={() => { }}
                         >
-                            menu 1
+                            About
+                        </HomeMenuButton>
+                        <HomeMenuButton
+                            onClick={() => { navigator('/posts') }}
+                        >
+                            Posts
                         </HomeMenuButton>
                         <HomeMenuButton
                             onClick={() => { }}
                         >
-                            menu 2
+                            Github
                         </HomeMenuButton>
                         <HomeMenuButton
                             onClick={() => { }}
                         >
-                            menu 3
-                        </HomeMenuButton>
-                        <HomeMenuButton
-                            onClick={() => { }}
-                        >
-                            menu 4
+                            Google Scholar
                         </HomeMenuButton>
                     </DivideContainer>
                 </DivideContainer>

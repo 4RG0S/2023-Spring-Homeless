@@ -12,10 +12,11 @@ import NoPost from "./NoPost";
 
 const PostsView = (): JSX.Element => {
     const [posts, updatePosts] = useState<Array<Post>>([]);
+    const smallComponentPixelWeight = 300;
 
     const isTabletScreen = useMediaQuery({
         minWidth: ResponsiveSizeConstant.TABLET_SCREEN_MIN_WIDTH,
-        maxWidth: ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH
+        maxWidth: ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH + smallComponentPixelWeight
     });
     const isMobileScreen = useMediaQuery({ maxWidth: ResponsiveSizeConstant.MOBILE_SCREEN_MAX_WIDTH });
 
@@ -39,6 +40,9 @@ const PostsView = (): JSX.Element => {
         <GridContainer 
             gridTemplateColumns={`repeat(${repeatCount}, 1fr)`}
             gridAutoFlow="dense"
+            width="100%"
+            height='100%'
+            {...{overflowY: 'scroll'}}
         >
             {posts.map(post => (
                 <PostCard key={post.id} post={post} />
