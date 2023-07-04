@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components"
-import { ColorConstant } from "../../../../GlobalConstant";
-import { ResponsiveText } from "../../../widget/TextWidgets";
-import UserRepository from "../../../../repo/UserRepository";
-import UserDummyRepositoryImpl from "../../../../repo/dummy/UserDummyRepositoryImpl";
-import User from "../../../../model/User";
-import logo from "../../../../assets/svg/logo.svg";
+import { ColorConstant } from "../../../GlobalConstant";
+import { ResponsiveText } from "../../widget/TextWidgets";
+import UserRepository from "../../../repo/UserRepository";
+import UserDummyRepositoryImpl from "../../../repo/dummy/UserDummyRepositoryImpl";
+import User from "../../../model/User";
+import logo from "../../../assets/svg/logo.svg";
 
 const LogoIconMedium = () => (
     <img src={logo} width='30%' height='100%' alt='Logo Icon' style={{ maxWidth: '35px', marginRight: '10px' }} />
@@ -33,14 +33,14 @@ const AppBar = () => {
     return <AppBarContainer>
         <AppBarItem $changeCursor={true}>
             <LogoIconMedium />
-            <ResponsiveText fontSize="Small" {...{margin: '0', display: 'flex'}}>
+            <ResponsiveText fontSize="Tiny" {...{margin: '0', display: 'flex'}}>
                 ARGOS
             </ResponsiveText>
         </AppBarItem>
         <AppBarItem $flexGrow={true}>{<MenuBar />}</AppBarItem>
         <AppBarItem $changeCursor={true}>
             <UserIconSmall imgURL={imgURL} />
-            <ResponsiveText fontSize="Small" {...{margin: '0 0 0 10px'}}>| {user?.name}</ResponsiveText>
+            <ResponsiveText fontSize="Tiny" {...{margin: '0 0 0 10px'}}>| {user?.name}</ResponsiveText>
         </AppBarItem>
     </AppBarContainer>
 };
@@ -72,10 +72,10 @@ const MenuBar = () => {
 
     return <MenuBarContainer>
         <MenuBarItem $selected={selectedMenu == 0} onClick={() => setSelectedMenu(0)}>
-            <ResponsiveText fontSize="Small" {...{margin: '0'}}>ABOUT</ResponsiveText>
+            <ResponsiveText fontSize="Tiny" {...{margin: '0'}}>ABOUT</ResponsiveText>
         </MenuBarItem>
         <MenuBarItem $selected={selectedMenu == 1} onClick={() => setSelectedMenu(1)}>
-            <ResponsiveText fontSize="Small" {...{margin: '0'}}>POSTS</ResponsiveText>
+            <ResponsiveText fontSize="Tiny" {...{margin: '0'}}>POSTS</ResponsiveText>
         </MenuBarItem>
     </MenuBarContainer>
 };

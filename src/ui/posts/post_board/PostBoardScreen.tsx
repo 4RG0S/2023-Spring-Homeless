@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import AppBar from './AppBar';
-import DivideContainer from '../../../widget/Divider';
+import AppBar from '../widget/AppBar';
+import DivideContainer from '../../widget/Divider';
 import { styled } from 'styled-components';
-import { ColorConstant, ResponsiveSizeConstant } from '../../../../GlobalConstant';
-import { ResponsiveText, Text } from '../../../widget/TextWidgets';
-import Scaffold from '../../../widget/Scaffold';
-import FlexContainer from '../../../widget/FlexContainer';
+import { ColorConstant, ResponsiveSizeConstant } from '../../../GlobalConstant';
+import { ResponsiveText, Text } from '../../widget/TextWidgets';
+import Scaffold from '../../widget/Scaffold';
+import FlexContainer from '../../widget/FlexContainer';
+import PostsView from '../posts_view/PostsView';
 
 const PostBoardScreen = () => {
     const [selectedMenu, setSelectedMenu] = useState(0);
@@ -13,7 +14,7 @@ const PostBoardScreen = () => {
     return <Scaffold>
         <BlackBackground>
             <AppBar />
-            <DivideContainer direction='row' {...{ marginTop: '30px' }} disappearable={true}
+            <DivideContainer direction='row' disappearable={true}
                 maxConditionWidth={ResponsiveSizeConstant.TABLET_SCREEN_MAX_WIDTH}>
                 <DivideContainer direction='column' ratio={2}>
                     <MenuBarContainer>
@@ -58,7 +59,9 @@ const PostBoardScreen = () => {
                         </MenuBarItem>
                     </MenuBarContainer>
                 </DivideContainer>
-                <DivideContainer ratio={8}></DivideContainer>
+                <DivideContainer ratio={8}>
+                    <PostsView />
+                </DivideContainer>
             </DivideContainer>
         </BlackBackground>
     </Scaffold>
