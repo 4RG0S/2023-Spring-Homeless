@@ -7,6 +7,7 @@ type TextProps = {
     color?: string,
     fontSize?: string | number,
     fontWeight?: string | number,
+    wordWarp?: 'normal' | 'break-word',
     width?: string,  // <length>
     height?: string  // <length>
     id?: string,
@@ -16,8 +17,9 @@ type TextProps = {
 type ResponsiveTextProps = {
     children: React.ReactNode,
     color?: string,
-    fontSize?: 'Large' | 'Medium' | 'Small' | string,
+    fontSize?: 'Large' | 'Medium' | 'Small' | 'Tiny' | string,
     fontWeight?: string | number,
+    wordWarp?: 'normal' | 'break-word',
     width?: string | Array<string>,  // <length>
     height?: string  // <length>
     id?: string,
@@ -29,6 +31,7 @@ export const Text: React.FC<TextProps> = ({
     color = undefined,
     fontSize = undefined,
     fontWeight = undefined,
+    wordWarp = 'normal',
     width = 'auto',
     height = 'auto',
     id = undefined,
@@ -39,6 +42,7 @@ export const Text: React.FC<TextProps> = ({
         color: color,
         fontSize: fontSize,
         fontWeight: fontWeight,
+        wordWrap: wordWarp,
         width: width,
         height: height,
         ...otherAttributes
@@ -52,6 +56,7 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
     color = undefined,
     fontSize = 'Large',
     fontWeight = undefined,
+    wordWarp = 'normal',
     width = 'auto',
     height = 'auto',
     id = undefined,
@@ -70,6 +75,7 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
     if (fontSize === 'Large') selectedFontSize = ResponsiveFontSizeConstant.LARGE;
     else if (fontSize === 'Medium') selectedFontSize = ResponsiveFontSizeConstant.MEDIUM;
     else if (fontSize === 'Small') selectedFontSize = ResponsiveFontSizeConstant.SMALL;
+    else if (fontSize === 'Tiny') selectedFontSize = ResponsiveFontSizeConstant.TINY;
     else selectedFontSize = fontSize;
 
     if (isMobileScreen) selectedWidth = typeof width === 'object' ? width[0] : width;
@@ -80,9 +86,9 @@ export const ResponsiveText: React.FC<ResponsiveTextProps> = ({
         color: color,
         fontSize: selectedFontSize,
         fontWeight: fontWeight,
+        wordWrap: wordWarp,
         width: selectedWidth,
         height: height,
-        wordWrap: 'break-word',
         ...otherAttributes
     }}>
         {children}

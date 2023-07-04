@@ -1,11 +1,12 @@
 import React from "react"
+import { styled } from "styled-components"
 
 type ScaffoldProps = {
     children?: React.ReactNode,
     height?: string,
     width?: string,
-    minHeight?: string,
-    minWidth?: string
+    minheight?: string,
+    minwidth?: string
 }
 
 const scaffoldConstant = {
@@ -14,24 +15,31 @@ const scaffoldConstant = {
     SCREEN_MIN_WIDTH: '280px'
 }
 
+const StyledScaffold = styled.div<ScaffoldProps>`
+    height: ${props => props.height};
+    width: ${props => props.width};
+    min-height: ${props => props.minheight};
+    min-width: ${props => props.minwidth};
+`;
+
 const Scaffold: React.FC<ScaffoldProps> = ({
     children = undefined,
     height = undefined,
     width = scaffoldConstant.SCREEN_WIDTH,
-    minHeight = undefined,
-    minWidth = scaffoldConstant.SCREEN_MIN_WIDTH,
+    minheight = undefined,
+    minwidth = scaffoldConstant.SCREEN_MIN_WIDTH,
     ...otherAttributes
 }) => {
     return (
-        <div style={{
-            height: height,
-            width: width,
-            minHeight: minHeight,
-            minWidth: minWidth,
-            ...otherAttributes
-        }}>
+        <StyledScaffold 
+            height={height} 
+            width={width} 
+            minheight={minheight} 
+            minwidth={minwidth} 
+            style={{...otherAttributes}}
+        >
             {children}
-        </div>
+        </StyledScaffold>
     )
 }
 

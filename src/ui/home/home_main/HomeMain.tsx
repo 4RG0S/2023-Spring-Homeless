@@ -5,6 +5,7 @@ import { ColorConstant, ResponsiveSizeConstant } from "../../../GlobalConstant";
 import Brief from "./Brief";
 import HomeMenuButton from "./widget/HomeMenuButton";
 import { useNavigate } from "react-router-dom";
+import { Effect } from "./effect/Effect";
 
 type HomeMainProps = {
     screen_height: String
@@ -59,7 +60,8 @@ const HomeMain = ({
                 }}>
                 </DivideContainer>
                 <DivideContainer ratio={93} {...{ background: ColorConstant.WHITE }}>
-                    <Brief />
+                    <Brief {...{zIndex: 2, pointerEvents: 'none'}} />
+                    <Effect {...{position: 'absolute', zIndex: 1}} />
                 </DivideContainer>
             </DivideContainer>
         </DivideContainer>

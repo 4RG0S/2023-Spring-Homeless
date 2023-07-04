@@ -87,7 +87,7 @@ export default class PostDummyRepositoryImpl implements PostRepository {
             new Date(Date.now())
         ),
         new Post(
-            0, 
+            2, 
             Board.ANNOUNCEMENT,
             "<title3>",
             "<content3>",
@@ -99,7 +99,7 @@ export default class PostDummyRepositoryImpl implements PostRepository {
             "https://image.aladin.co.kr/product/27011/87/cover500/f822730421_1.jpg"
         ),
         new Post(
-            1, 
+            3, 
             Board.ANNOUNCEMENT,
             "<title4>",
             "<content4>",
@@ -107,6 +107,48 @@ export default class PostDummyRepositoryImpl implements PostRepository {
             this._user,
             new Array<string>("<tag>", "<tag>"),
             new Date(Date.now())
+        ),
+        new Post(
+            4, 
+            Board.ANNOUNCEMENT,
+            "<title4>",
+            "<content4>",
+            3,
+            this._user,
+            new Array<string>("<tag>", "<tag>"),
+            new Date(Date.now())
+        ),
+        new Post(
+            5, 
+            Board.ANNOUNCEMENT,
+            "<title4>",
+            "<content4>",
+            3,
+            this._user,
+            new Array<string>("<tag>", "<tag>"),
+            new Date(Date.now())
+        ),
+        new Post(
+            6, 
+            Board.ANNOUNCEMENT,
+            "<title4>",
+            "<content4>",
+            3,
+            this._user,
+            new Array<string>("<tag>", "<tag>"),
+            new Date(Date.now())
+        ),
+        new Post(
+            7, 
+            Board.ANNOUNCEMENT,
+            "<title3>",
+            "<content3>",
+            1,
+            this._user,
+            new Array<string>("<tag>", "<tag>"),
+            new Date(Date.now()),
+            undefined,
+            "https://image.aladin.co.kr/product/27011/87/cover500/f822730421_1.jpg"
         ),
     ];
 
