@@ -26,16 +26,16 @@ const PostBoardScreen = () => {
                             </FlexContainer>
                             <Text fontSize={20} {...{ margin: 0 }}>⋯</Text>
                         </InterestCategory>
-                        <MenuBarItem $selected={selectedMenu == 0} onClick={() => setSelectedMenu(0)}>
+                        <MenuBarItem $selected={selectedMenu === 0} onClick={() => setSelectedMenu(0)}>
                             <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>ANNOUNCEMENT</ResponsiveText>
                         </MenuBarItem>
-                        <MenuBarItem $selected={selectedMenu == 1} onClick={() => setSelectedMenu(1)}>
+                        <MenuBarItem $selected={selectedMenu === 1} onClick={() => setSelectedMenu(1)}>
                             <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>FREE</ResponsiveText>
                         </MenuBarItem>
-                        <MenuBarItem $selected={selectedMenu == 2} onClick={() => setSelectedMenu(2)}>
+                        <MenuBarItem $selected={selectedMenu === 2} onClick={() => setSelectedMenu(2)}>
                             <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>GALLERY</ResponsiveText>
                         </MenuBarItem>
-                        <MenuBarItem $selected={selectedMenu == 3} onClick={() => setSelectedMenu(3)}>
+                        <MenuBarItem $selected={selectedMenu === 3} onClick={() => setSelectedMenu(3)}>
                             <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>EVENT</ResponsiveText>
                         </MenuBarItem>
                     </MenuBarContainer>
@@ -46,16 +46,16 @@ const PostBoardScreen = () => {
                                 <Text fontSize={16} fontWeight={'bold'} {...{ margin: '0 35px 0 10px' }}>OLD</Text>
                             </FlexContainer>
                         </InterestCategory>
-                        <MenuBarItem $selected={selectedMenu == 4} onClick={() => setSelectedMenu(4)}>
+                        <MenuBarItem $selected={selectedMenu === 4} onClick={() => setSelectedMenu(4)}>
                             <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>ARM</ResponsiveText>
                         </MenuBarItem>
-                        <MenuBarItem $selected={selectedMenu == 5} onClick={() => setSelectedMenu(5)}>
+                        <MenuBarItem $selected={selectedMenu === 5} onClick={() => setSelectedMenu(5)}>
                             <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>ALGORITHM</ResponsiveText>
                         </MenuBarItem>
-                        <MenuBarItem $selected={selectedMenu == 6} onClick={() => setSelectedMenu(6)}>
+                        <MenuBarItem $selected={selectedMenu === 6} onClick={() => setSelectedMenu(6)}>
                             <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>HARDWARE</ResponsiveText>
                         </MenuBarItem>
-                        <MenuBarItem $selected={selectedMenu == 7} onClick={() => setSelectedMenu(7)}>
+                        <MenuBarItem $selected={selectedMenu === 7} onClick={() => setSelectedMenu(7)}>
                             <ResponsiveText fontSize={menuTextSize} {...{margin: '0'}}>WEB DEVELOPMENT</ResponsiveText>
                         </MenuBarItem>
                     </MenuBarContainer>
