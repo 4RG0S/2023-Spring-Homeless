@@ -67,17 +67,17 @@ const AppBarItem = styled.div<{ $flexGrow?: boolean, $changeCursor?: boolean }>`
     font-size: 18px;
     padding: 0px 30px;
     flex-grow: ${({ $flexGrow = false }) => $flexGrow ? 1 : 0};
-    cursor: ${({ $changeCursor = false }) => $changeCursor ? 'pointer' : 'default'}})};
+    cursor: ${({ $changeCursor = false }) => $changeCursor ? 'pointer' : 'default'};
 `;
 
 const MenuBar = () => {
     const [selectedMenu, setSelectedMenu] = React.useState(0);
 
     return <MenuBarContainer>
-        <MenuBarItem $selected={selectedMenu == 0} onClick={() => setSelectedMenu(0)}>
+        <MenuBarItem $selected={selectedMenu === 0} onClick={() => setSelectedMenu(0)}>
             <ResponsiveText fontSize="Tiny" {...{margin: '0'}}>ABOUT</ResponsiveText>
         </MenuBarItem>
-        <MenuBarItem $selected={selectedMenu == 1} onClick={() => setSelectedMenu(1)}>
+        <MenuBarItem $selected={selectedMenu === 1} onClick={() => setSelectedMenu(1)}>
             <ResponsiveText fontSize="Tiny" {...{margin: '0'}}>POSTS</ResponsiveText>
         </MenuBarItem>
     </MenuBarContainer>
