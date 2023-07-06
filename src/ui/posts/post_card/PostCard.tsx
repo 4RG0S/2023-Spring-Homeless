@@ -31,7 +31,8 @@ const PostCard = ({post}: PostCardProps): JSX.Element => {
 
 const Thumbnail = ({post}: PostCardProps) => {
     if (post.thumbnailURL) return (<img src={post.thumbnailURL} width='100%' height='200px' 
-                                        style={{borderRadius: '20px', objectFit: 'cover'}} />);
+                                        style={{borderRadius: '20px', objectFit: 'cover'}}
+                                        alt="thumbnail" />);
     else return <></>;
 }
 
@@ -77,7 +78,8 @@ const Tags = ({post}: PostCardProps) => {
 
 const UserIconSmall = ({imgURL}: {imgURL: string}) => (
     <img src={imgURL} width='30px' height='30px' 
-         style={{borderRadius: '50%', objectFit: 'cover', margin: '10px 0'}} />
+         style={{borderRadius: '50%', objectFit: 'cover', margin: '10px 0'}}
+         alt="UserIcon" />
 );
 
 export default PostCard;

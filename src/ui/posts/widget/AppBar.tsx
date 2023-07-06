@@ -14,7 +14,8 @@ const LogoIconMedium = () => (
 
 const UserIconSmall = ({imgURL}: {imgURL: string}) => (
     <img src={imgURL} width='30px' height='30px' 
-         style={{borderRadius: '50%', objectFit: 'cover', margin: '10px 0'}} />
+         style={{borderRadius: '50%', objectFit: 'cover', margin: '10px 0'}}
+         alt="UserIcon" />
 );
 
 const AppBar = () => {
